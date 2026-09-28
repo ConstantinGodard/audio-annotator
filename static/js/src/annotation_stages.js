@@ -6,6 +6,41 @@
  * Dependencies:
  *   jQuey, audio-annotator.css
  */
+
+var LIKERT_LABELS = [
+    "Pas du tout d'accord",
+    "Plutôt pas d'accord",
+    "Légèrement en désaccord",
+    "Ni d'accord, ni en désaccord",
+    "Légèrement d'accord",
+    "Plutôt d'accord",
+    "Tout à fait d'accord"
+];
+
+var EMOTIONS = [
+    {
+        key: 'calme', short: 'C', label: 'Calme / assurance',
+        definition: "Le candidat conduit l'entretien avec un débit régulier, sans précipitation ni tremblement dans la voix. Les questions s'enchaînent de façon structurée, les hésitations sont rares ou brèves, et le ton reste stable même face à une réponse inattendue du patient.",
+        signal: "prosodie régulière, pauses maîtrisées (silence volontaire, pas silence de flottement), absence d'accélération du débit."
+    },
+    {
+        key: 'empathie', short: 'E', label: 'Empathie / chaleur',
+        definition: "Le candidat réagit de manière ajustée aux indices donnés par le patient (verbaux ou non-verbaux) : reformule, valide ce que le patient exprime, adapte son ton pour rassurer, laisse de l'espace pour que le patient s'exprime. La voix porte une chaleur perceptible (inflexions douces, débit ralenti sur les moments sensibles).",
+        signal: "variations prosodiques congruentes avec le contenu du patient, pauses d'écoute, marqueurs verbaux de réassurance."
+    },
+    {
+        key: 'impatience', short: 'I', label: 'Impatience / irritation',
+        definition: "Le candidat manifeste une volonté de faire avancer l'échange plus vite que ce que permet le patient : coupe la parole, enchaîne les questions sans laisser de temps de réponse, ton qui se durcit ou débit qui s'accélère nettement, soupirs ou marqueurs de frustration.",
+        signal: "chevauchements de parole, montée du débit et de l'intensité vocale, intonation abrupte."
+    },
+    {
+        key: 'froideur', short: 'F', label: 'Froideur / détachement',
+        definition: "Le candidat traite l'échange comme une procédure plutôt qu'une interaction avec une personne : ton monocorde, absence de relance ou de reformulation face aux indices émotionnels du patient, pas d'effort perceptible pour rassurer ou expliquer. Pas d'agressivité, mais une absence de réponse affective : le patient est ignoré en tant que sujet.",
+        signal: "prosodie plate, faible variation d'intonation, réponses minimales sans accompagnement verbal."
+    }
+];
+
+
 function StageOneView() {
     this.dom = null;
 }
@@ -117,16 +152,20 @@ StageThreeView.prototype = {
             class: 'tag_container',
         });
         
-        this.dom = container.append([message, time, tagContainer]);
+        this.dom = container.append([message, tagContainer]); //this.dom = container.append([message, time, tagContainer]);
     },
 
     // Replace the proximity and annotation elements with the new elements that contain the
     // tags in the proximityTags and annotationTags lists
+    // updateTagContents: function(proximityTags, annotationTags) {
+    //     $('.tag_container', this.dom).empty();
+    //     var proximity = this.createProximityTags(proximityTags);
+    //     var annotation = this.createAnnotationTags(annotationTags);
+    //     $('.tag_container', this.dom).append([annotation, proximity]);
+    // },
     updateTagContents: function(proximityTags, annotationTags) {
         $('.tag_container', this.dom).empty();
-        var proximity = this.createProximityTags(proximityTags);
-        var annotation = this.createAnnotationTags(annotationTags);
-        $('.tag_container', this.dom).append([annotation, proximity]);
+        $('.tag_container', this.dom).append(this.createAnnotationTags());
     },
 
     // Create proximity tag elements
@@ -164,32 +203,45 @@ StageThreeView.prototype = {
     },
 
     // Create annotation tag elements
-    createAnnotationTags: function(annotationTags) {
-        var my = this;
+    createAnnotationTags: function() {
+    var my = this;
+    var wrapper = $('<div>', { class: 'emotions_container' });
 
-        var annotation = $('<div>');
-        var annotationLabel = $('<div>', {
-            class: 'stage_3_label',
-            text: 'Label:',
-        });
+    EMOTIONS.forEach(function (emo) {
+        var block = $('<div>', { class: 'emotion_block' });
+        block.append($('<div>', { class: 'emotion_title' }).append([
+            $('<span>', { text: 'Cet extrait exprime : ' }),
+            $('<b>', { text: emo.label })
+        ]));
+        block.append($('<div>', {
+            class: 'emotion_def',
+            text: emo.definition + ' Signal audio : ' + emo.signal
+        }));
 
-        var annotationContainer = $('<div>', {
-            class: 'annotation_tags'
-        });
-
-        annotationTags.forEach(function (tagName) {
-            var tag = $('<button>', {
-                class: 'annotation_tag btn disabled',
-                text: tagName,
+        var row = $('<div>', { class: 'likert_row' });
+        LIKERT_LABELS.forEach(function (text, i) {
+            var score = i + 1;
+            var cell = $('<div>', { class: 'likert_cell' });
+            var btn = $('<button>', {
+                class: 'annotation_tag likert_btn btn',
+                text: score,
+                title: score + ' – ' + text
             });
-            // When a proximity tag is clicked fire the 'change-tag' event with what annotation tag it is
-            tag.click(function () {
-                $(my).trigger('change-tag', [{annotation: tagName}]);
+            btn.attr('data-emotion', emo.key).attr('data-score', score);
+            btn.click(function () {
+                $(my).trigger('change-tag', [{ emotion: emo.key, score: score }]);
             });
-            annotationContainer.append(tag);
+            cell.append(btn);
+            cell.append($('<div>', {
+                class: 'likert_cap',
+                text: (score === 1 || score === 4 || score === 7) ? text : ''
+            }));
+            row.append(cell);
         });
-
-        return annotation.append([annotationLabel, annotationContainer]);
+        block.append(row);
+        wrapper.append(block);
+    });
+    return wrapper;
     },
 
     // Update stage 3 dom with the current regions data
@@ -208,31 +260,38 @@ StageThreeView.prototype = {
 
     // Update the elements of the proximity and annotation tags to highlight
     // which tags match the selected region's current annotation and proximity
+    // updateSelectedTags: function(region) {
+    //     $('.annotation_tag', this.dom).removeClass('selected');
+    //     $('.proximity_tag', this.dom).removeClass('selected');
+    //     $('.custom_tag input', this.dom).val('');
+    //     $('.annotation_tag', this.dom).removeClass('disabled');
+    //     $('.proximity_tag', this.dom).removeClass('disabled');
+
+    //     if (region.annotation) {
+    //         var selectedTags = $('.annotation_tag', this.dom).filter(function () {
+    //             return this.innerHTML === region.annotation;
+    //         });
+    //         if (selectedTags.length > 0) {
+    //             selectedTags.addClass('selected');       
+    //         } else {
+    //             $('.custom_tag input', this.dom).val(region.annotation); 
+    //         }
+    //     }
+
+    //     if (region.proximity) {
+    //         var selectedTags = $('.proximity_tag', this.dom).filter(function () {
+    //             return this.innerHTML === region.proximity;
+    //         });
+    //         selectedTags.addClass('selected');
+    //     }
+    // }
     updateSelectedTags: function(region) {
-        $('.annotation_tag', this.dom).removeClass('selected');
-        $('.proximity_tag', this.dom).removeClass('selected');
-        $('.custom_tag input', this.dom).val('');
-        $('.annotation_tag', this.dom).removeClass('disabled');
-        $('.proximity_tag', this.dom).removeClass('disabled');
-
-        if (region.annotation) {
-            var selectedTags = $('.annotation_tag', this.dom).filter(function () {
-                return this.innerHTML === region.annotation;
-            });
-            if (selectedTags.length > 0) {
-                selectedTags.addClass('selected');       
-            } else {
-                $('.custom_tag input', this.dom).val(region.annotation); 
-            }
-        }
-
-        if (region.proximity) {
-            var selectedTags = $('.proximity_tag', this.dom).filter(function () {
-                return this.innerHTML === region.proximity;
-            });
-            selectedTags.addClass('selected');
-        }
-    }
+    $('.likert_btn').removeClass('selected disabled');
+    var scores = (region && region.scores) || {};
+    Object.keys(scores).forEach(function (key) {
+        $('.likert_btn[data-emotion="' + key + '"][data-score="' + scores[key] + '"]').addClass('selected');
+    });
+    },
 };
 
 /*
@@ -286,7 +345,8 @@ AnnotationStages.prototype = {
             'id': region.id,
             'start': region.start,
             'end': region.end,
-            'annotation': region.annotation
+            'annotation': region.annotation,
+            'scores': region.scores || {}
         };
         if (this.usingProximity) {
             regionData.proximity = region.proximity;
@@ -317,21 +377,32 @@ AnnotationStages.prototype = {
     },
 
     // Check that all the annotations have the required tags, if not alert the user
+    // annotationDataValidationCheck: function() {
+    //     if (this.wavesurfer.regions) {
+    //         for (var region_id in this.wavesurfer.regions.list) {
+    //             var region = this.wavesurfer.regions.list[region_id];
+    //             if (Object.keys(region.scores || {}).length < EMOTIONS.length) {
+    //                 Message.notifyAlert('Note les 4 émotions pour chaque segment avant de soumettre.');
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // },
     annotationDataValidationCheck: function() {
-        if (this.wavesurfer.regions) {
-            for (var region_id in this.wavesurfer.regions.list) {
-                var region = this.wavesurfer.regions.list[region_id];
-                if (region.annotation === '' || (this.usingProximity && region.proximity === '')) {
-                    if (this.usingProximity) {
-                        Message.notifyAlert('Make sure all your annotations have an annotation tag and a proximity tag!'); 
-                    } else {
-                        Message.notifyAlert('Make sure all your annotations have a tag!'); 
-                    }
-                    return false;
-                }
-            }
+    var regions = this.wavesurfer.regions ? Object.keys(this.wavesurfer.regions.list) : [];
+    if (regions.length === 0) {
+        Message.notifyAlert("L'audio n'est pas encore chargé.");
+        return false;
+    }
+    for (var i = 0; i < regions.length; i++) {
+        var region = this.wavesurfer.regions.list[regions[i]];
+        if (Object.keys(region.scores || {}).length < EMOTIONS.length) {
+            Message.notifyAlert('Note les 4 émotions avant de soumettre.');
+            return false;
         }
-        return true;
+    }
+    return true;
     },
 
     // Switch the currently selected region
@@ -354,7 +425,7 @@ AnnotationStages.prototype = {
             if (newStage === 2) {
                 region.update({drag: false, resize: false});
             } else if (newStage === 3) {
-                region.update({drag: true, resize: true});
+                region.update({drag: false, resize: false}); // region.update({drag: true, resize: true});
                 $(region.element).addClass('current_region');
                 $(region.annotationLabel.element).addClass('current_label');
             }
@@ -362,26 +433,27 @@ AnnotationStages.prototype = {
         this.currentRegion = region;
     },
 
-    clickDeselectCurrentRegion: function() {
-        if (this.blockDeselect) {
-            // A new region was created, block the subsequent click to not deselect
-            this.blockDeselect = false;
-        } else {
-            if (this.currentRegion != null) {
-                // Disable drag and resize editing for the old current region. 
-                // Also remove the highlight of the label and region border
-                this.currentRegion.update({drag: false, resize: false});
-                $(this.currentRegion.element).removeClass('current_region');
-                $(this.currentRegion.annotationLabel.element).removeClass('current_label');
+    // clickDeselectCurrentRegion: function() {
+    //     if (this.blockDeselect) {
+    //         // A new region was created, block the subsequent click to not deselect
+    //         this.blockDeselect = false;
+    //     } else {
+    //         if (this.currentRegion != null) {
+    //             // Disable drag and resize editing for the old current region. 
+    //             // Also remove the highlight of the label and region border
+    //             this.currentRegion.update({drag: false, resize: false});
+    //             $(this.currentRegion.element).removeClass('current_region');
+    //             $(this.currentRegion.annotationLabel.element).removeClass('current_label');
 
-                // Remove the highlated label and disable.
-                $('.annotation_tag', this.dom).removeClass('selected');
-                $('.proximity_tag', this.dom).removeClass('selected');
-                $('.annotation_tag', this.dom).addClass('disabled');
-                $('.proximity_tag', this.dom).addClass('disabled');
-            }
-        }
-    },
+    //             // Remove the highlated label and disable.
+    //             $('.annotation_tag', this.dom).removeClass('selected');
+    //             $('.proximity_tag', this.dom).removeClass('selected');
+    //             $('.annotation_tag', this.dom).addClass('disabled');
+    //             $('.proximity_tag', this.dom).addClass('disabled');
+    //         }
+    //     }
+    // },
+    clickDeselectCurrentRegion: function() { return; },
 
     // Switch stages and the current region
     updateStage: function(newStage, region) {
@@ -429,22 +501,24 @@ AnnotationStages.prototype = {
     },
 
     // Alert users of hints about how to use the interface
-    hint: function() {
-        if (this.wavesurfer.regions && Object.keys(this.wavesurfer.regions.list).length === 1) {
-            if (this.currentStage === 1 && !this.shownSelectHint) {
-                // If the user deselects a region for the first time and have not seen this hint,
-                // alert them on how to select and deselect a region
-                Message.notifyHint('Double click on a segment to select or deselect it.');
-                this.shownSelectHint = true;
-            }
-            if (this.currentStage === 3 && !this.shownTagHint) {
-                // When the user makes a region for the first time, if they have not seen this hint,
-                // alert them on how to annotate a region
-                Message.notifyHint('Select a tag to annotation the segment.');
-                this.shownTagHint = true;
-            }
-        }
-    },
+    // hint: function() {
+    //     if (this.wavesurfer.regions && Object.keys(this.wavesurfer.regions.list).length === 1) {
+    //         if (this.currentStage === 1 && !this.shownSelectHint) {
+    //             // If the user deselects a region for the first time and have not seen this hint,
+    //             // alert them on how to select and deselect a region
+    //             Message.notifyHint('Double click on a segment to select or deselect it.');
+    //             this.shownSelectHint = true;
+    //         }
+    //         if (this.currentStage === 3 && !this.shownTagHint) {
+    //             // When the user makes a region for the first time, if they have not seen this hint,
+    //             // alert them on how to annotate a region
+    //             Message.notifyHint('Select a tag to annotation the segment.');
+    //             this.shownTagHint = true;
+    //         }
+    //     }
+    // },
+    hint: function() {},
+
 
     // Reset the field values (except for hint related fields)
     clear: function() {
@@ -464,9 +538,10 @@ AnnotationStages.prototype = {
     reset: function(proximityTags, annotationTags, solution, alwaysShowTags) {
         this.clear();
         // Update all Tags' Contents
-        this.alwaysShowTags = alwaysShowTags || false;
+        this.alwaysShowTags = true; // this.alwaysShowTags = alwaysShowTags || false;
         this.updateContentsTags(proximityTags, annotationTags);
-        this.usingProximity = proximityTags.length > 0;
+        //this.usingProximity = proximityTags.length > 0;
+        this.usingProximity = false;
         // Update solution set
         this.annotationSolutions = solution.annotations || [];
         this.city = solution.city || '';
@@ -585,44 +660,38 @@ AnnotationStages.prototype = {
         }
     },
 
+    createFullRegion: function() {
+    if (!this.wavesurfer.regions) { return; }
+    if (Object.keys(this.wavesurfer.regions.list).length > 0) { return; }
+    var region = this.wavesurfer.addRegion({
+        start: 0,
+        end: this.wavesurfer.getDuration(),
+        drag: false,
+        resize: false
+    });
+    this.updateStage(3, region);
+    },
+
     // Event handler: called when a region's tags are added or changed
+    scoresSummary: function(scores) {
+        return EMOTIONS.map(function (e) { return e.short + (scores[e.key] || '–'); }).join(' ');
+    },
+
     updateRegion: function(event, data) {
-        var annotationEventType = null;
-        var proximityEventType = null;
+        if (!this.currentRegion || !data.emotion) { return; }
+        var region = this.currentRegion;
+        region.scores = region.scores || {};
+        var eventType = region.scores[data.emotion] === undefined ? 'add' : 'change';
+        region.scores[data.emotion] = data.score;
 
-        // Determine if the tags where added for the first time or just changed
-        if (data.annotation && data.annotation !== this.currentRegion.annotation) {
-            annotationEventType = this.currentRegion.annotation ? 'change' : 'add';
-        }
-        if (data.proximity && data.proximity !== this.currentRegion.proximity) {
-            proximityEventType = this.currentRegion.proximity ? 'change' : 'add';
-        }
-
-        // Update the current region with the tag data
-        this.currentRegion.update(data);
-        // Give feedback if these tags improve the user's f1 score
+        this.trackEvent(eventType + '-score-' + data.emotion, region.id, String(data.score));
+        region.update({ annotation: this.scoresSummary(region.scores) });
         this.giveFeedback();
 
-        // Track tag change / add events
-        if (annotationEventType) {
-            this.trackEvent(
-                annotationEventType + '-annotation-label',
-                this.currentRegion.id,
-                this.currentRegion.annotation
-            );
-        }
-        if (proximityEventType) {
-            this.trackEvent(
-                proximityEventType + '-proximity-label',
-                this.currentRegion.id,
-                this.currentRegion.proximity
-            );
-        }
-
-        // If the region has all its required tags, deselect the region and go back to stage 1
-        if (this.currentRegion.annotation && (!this.usingProximity || this.currentRegion.proximity)) {
-            this.updateStage(1);
-        }
+        // Les 4 émotions sont notées : on désélectionne le segment
+        // if (Object.keys(region.scores).length === EMOTIONS.length) {
+        //     this.updateStage(1);
+        // }
     },
 
     // Helper function, called when the user makes changes that will affect their f1 score
@@ -813,17 +882,18 @@ AnnotationStages.prototype = {
 
     // Attach event handlers for wavesurfer events
     addWaveSurferEvents: function() {
-        this.wavesurfer.enableDragSelection();
-        this.wavesurfer.on('audioprocess', this.updateEndOfRegion.bind(this));
-        this.wavesurfer.on('audioprocess', this.updateStageOne.bind(this));
-        this.wavesurfer.on('pause', this.updateEndOfRegion.bind(this));
-        this.wavesurfer.on('region-play', this.trackPlayRegion.bind(this));
-        this.wavesurfer.on('region-dblclick', this.switchToStageThree.bind(this));
-        this.wavesurfer.on('label-dblclick', this.switchToStageThree.bind(this));
-        this.wavesurfer.on('region-update-end', this.trackMovement.bind(this));
-        this.wavesurfer.on('region-update-end', this.createRegionSwitchToStageThree.bind(this));
-        this.wavesurfer.on('region-update-end', this.updateStartEndStageThree.bind(this));
-        this.wavesurfer.on('region-updated', this.updateStartEndStageThree.bind(this));
+        // this.wavesurfer.enableDragSelection();
+        // this.wavesurfer.on('audioprocess', this.updateEndOfRegion.bind(this));
+        // this.wavesurfer.on('audioprocess', this.updateStageOne.bind(this));
+        // this.wavesurfer.on('pause', this.updateEndOfRegion.bind(this));
+        // this.wavesurfer.on('region-play', this.trackPlayRegion.bind(this));
+        // this.wavesurfer.on('region-dblclick', this.switchToStageThree.bind(this));
+        // this.wavesurfer.on('label-dblclick', this.switchToStageThree.bind(this));
+        // this.wavesurfer.on('region-update-end', this.trackMovement.bind(this));
+        // this.wavesurfer.on('region-update-end', this.createRegionSwitchToStageThree.bind(this));
+        // this.wavesurfer.on('region-update-end', this.updateStartEndStageThree.bind(this));
+        // this.wavesurfer.on('region-updated', this.updateStartEndStageThree.bind(this));
+        this.wavesurfer.on('ready', this.createFullRegion.bind(this));
         this.wavesurfer.on('region-updated', this.updateStageOneWhileCreating.bind(this));
         this.wavesurfer.on('region-updated', this.stageThreeView.updateSelectedTags.bind(this));
         this.wavesurfer.on('region-created', this.trackBeginingOfRegionCreation.bind(this));
