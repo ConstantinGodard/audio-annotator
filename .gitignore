@@ -2,4 +2,4 @@
 .idea/
 
 # Data files
-static\audio
+static/audio/
