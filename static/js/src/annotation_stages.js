@@ -206,6 +206,7 @@ StageThreeView.prototype = {
     createAnnotationTags: function() {
     var my = this;
     var wrapper = $('<div>', { class: 'emotions_container' });
+    wrapper.append($('<div>', { class: 'listen_notice', text: "Écoute l'audio en entier pour débloquer la notation." }));
 
     EMOTIONS.forEach(function (emo) {
         var block = $('<div>', { class: 'emotion_block' });
@@ -223,9 +224,10 @@ StageThreeView.prototype = {
             var score = i + 1;
             var cell = $('<div>', { class: 'likert_cell' });
             var btn = $('<button>', {
-                class: 'annotation_tag likert_btn btn',
+                class: 'likert_btn btn',
                 text: score,
-                title: score + ' – ' + text
+                title: score + ' – ' + text,
+                disabled: true
             });
             btn.attr('data-emotion', emo.key).attr('data-score', score);
             btn.click(function () {
@@ -241,6 +243,13 @@ StageThreeView.prototype = {
         block.append(row);
         wrapper.append(block);
     });
+    var comment = $('<textarea>', {
+    class: 'comment_box',
+    placeholder: 'Commentaire (optionnel) : audio inaudible, difficile de trancher entre deux expressions...'
+    });
+    // Empêche la barre espace et les autres touches de déclencher les raccourcis du lecteur
+    comment.on('keydown keyup keypress', function (e) { e.stopPropagation(); });
+    wrapper.append(comment);
     return wrapper;
     },
 
@@ -285,12 +294,20 @@ StageThreeView.prototype = {
     //         selectedTags.addClass('selected');
     //     }
     // }
-    updateSelectedTags: function(region) {
-    $('.likert_btn').removeClass('selected disabled');
-    var scores = (region && region.scores) || {};
-    Object.keys(scores).forEach(function (key) {
-        $('.likert_btn[data-emotion="' + key + '"][data-score="' + scores[key] + '"]').addClass('selected');
-    });
+//     updateSelectedTags: function(region) {
+//     $('.likert_btn').removeClass('selected disabled');
+//     var scores = (region && region.scores) || {};
+//     Object.keys(scores).forEach(function (key) {
+//         $('.likert_btn[data-emotion="' + key + '"][data-score="' + scores[key] + '"]').addClass('selected');
+//     });
+//     },
+    updateSelectedTags: function() {},
+
+    refreshSelection: function(scores) {
+        $('.likert_btn').removeClass('selected');
+        Object.keys(scores).forEach(function (key) {
+            $('.likert_btn[data-emotion="' + key + '"][data-score="' + scores[key] + '"]').addClass('selected');
+        });
     },
 };
 
@@ -315,15 +332,19 @@ function AnnotationStages(wavesurfer, hiddenImage) {
     this.previousF1Score = 0;
     this.events = [];
     this.alwaysShowTags = false;
+    this.scores = {};
+    this.listenedOnce = false;
 
     // These are not reset, since they should only be shown for the first clip
     this.shownTagHint = false;
     this.shownSelectHint = false;
 
     this.blockDeselect = false;
+
 }
 
 AnnotationStages.prototype = {
+
     // Create the different stages dom and append event handlers
     create: function() {
         // Add events
@@ -345,8 +366,8 @@ AnnotationStages.prototype = {
             'id': region.id,
             'start': region.start,
             'end': region.end,
-            'annotation': region.annotation,
-            'scores': region.scores || {}
+            'annotation': this.scoresSummary(this.scores),
+            'scores': this.scores
         };
         if (this.usingProximity) {
             regionData.proximity = region.proximity;
@@ -355,15 +376,25 @@ AnnotationStages.prototype = {
     },
 
     // Return an array of all the annotations the user has made for this clip
+    // getAnnotations: function() {
+    //     var annotationData = [];
+    //     if (this.wavesurfer.regions) {
+    //         for (var region_id in this.wavesurfer.regions.list) {
+    //             var region = this.wavesurfer.regions.list[region_id];
+    //             annotationData.push(this.getAnnotationData(region));
+    //         }
+    //     }
+    //     return annotationData;
+    // },
     getAnnotations: function() {
-        var annotationData = [];
-        if (this.wavesurfer.regions) {
-            for (var region_id in this.wavesurfer.regions.list) {
-                var region = this.wavesurfer.regions.list[region_id];
-                annotationData.push(this.getAnnotationData(region));
-            }
-        }
-        return annotationData;
+    return [{
+        id: 'full',
+        start: 0,
+        end: this.wavesurfer.getDuration(),
+        annotation: this.scoresSummary(this.scores),
+        scores: $.extend({}, this.scores),
+        comment: $.trim($('.comment_box').val() || '')
+    }];
     },
 
     // Return an array of all the annotations the user has created and then deleted for this clip
@@ -389,22 +420,30 @@ AnnotationStages.prototype = {
     //     }
     //     return true;
     // },
+
+    // annotationDataValidationCheck: function() {
+    // var regions = this.wavesurfer.regions ? Object.keys(this.wavesurfer.regions.list) : [];
+    // if (regions.length === 0) {
+    //     Message.notifyAlert("L'audio n'est pas encore chargé.");
+    //     return false;
+    // }
+    // for (var i = 0; i < regions.length; i++) {
+    //     var region = this.wavesurfer.regions.list[regions[i]];
+    //     if (Object.keys(region.scores || {}).length < EMOTIONS.length) {
+    //         Message.notifyAlert('Note les 4 émotions avant de soumettre.');
+    //         return false;
+    //     }
+    // }
+    // return true;
+    // },
+
     annotationDataValidationCheck: function() {
-    var regions = this.wavesurfer.regions ? Object.keys(this.wavesurfer.regions.list) : [];
-    if (regions.length === 0) {
-        Message.notifyAlert("L'audio n'est pas encore chargé.");
+    if (Object.keys(this.scores).length < EMOTIONS.length) {
+        Message.notifyAlert('Note les 4 émotions avant de valider.');
         return false;
-    }
-    for (var i = 0; i < regions.length; i++) {
-        var region = this.wavesurfer.regions.list[regions[i]];
-        if (Object.keys(region.scores || {}).length < EMOTIONS.length) {
-            Message.notifyAlert('Note les 4 émotions avant de soumettre.');
-            return false;
-        }
     }
     return true;
     },
-
     // Switch the currently selected region
     swapRegion: function(newStage, region) {
         if (this.currentRegion) {
@@ -413,9 +452,9 @@ AnnotationStages.prototype = {
             $(this.currentRegion.annotationLabel.element).removeClass('current_label');
 
             // Remove the highlated label and disable.
-            $('.annotation_tag', this.dom).removeClass('selected');
+            //$('.annotation_tag', this.dom).removeClass('selected');
             $('.proximity_tag', this.dom).removeClass('selected');
-            $('.annotation_tag', this.dom).addClass('disabled');
+            //$('.annotation_tag', this.dom).addClass('disabled');
             $('.proximity_tag', this.dom).addClass('disabled');
         }
 
@@ -537,6 +576,9 @@ AnnotationStages.prototype = {
     // Reset field values and update the proximity tags, annotation tages and annotation solutions
     reset: function(proximityTags, annotationTags, solution, alwaysShowTags) {
         this.clear();
+        $('.comment_box').val('');
+        this.scores = {};
+        this.listenedOnce = false;
         // Update all Tags' Contents
         this.alwaysShowTags = true; // this.alwaysShowTags = alwaysShowTags || false;
         this.updateContentsTags(proximityTags, annotationTags);
@@ -677,23 +719,32 @@ AnnotationStages.prototype = {
         return EMOTIONS.map(function (e) { return e.short + (scores[e.key] || '–'); }).join(' ');
     },
 
+    // updateRegion: function(event, data) {
+    //     if (!this.currentRegion || !data.emotion) { return; }
+    //     var region = this.currentRegion;
+    //     region.scores = region.scores || {};
+    //     var eventType = region.scores[data.emotion] === undefined ? 'add' : 'change';
+    //     region.scores[data.emotion] = data.score;
+
+    //     $('.likert_btn[data-emotion="' + data.emotion + '"]').removeClass('selected');
+    //     $('.likert_btn[data-emotion="' + data.emotion + '"][data-score="' + data.score + '"]').addClass('selected');
+
+    //     this.trackEvent(eventType + '-score-' + data.emotion, region.id, String(data.score));
+    //     region.update({ annotation: this.scoresSummary(region.scores) });
+    //     this.giveFeedback();
+
+    //     // Les 4 émotions sont notées : on désélectionne le segment
+    //     // if (Object.keys(region.scores).length === EMOTIONS.length) {
+    //     //     this.updateStage(1);
+    //     // }
+    // },
     updateRegion: function(event, data) {
-        if (!this.currentRegion || !data.emotion) { return; }
-        var region = this.currentRegion;
-        region.scores = region.scores || {};
-        var eventType = region.scores[data.emotion] === undefined ? 'add' : 'change';
-        region.scores[data.emotion] = data.score;
-
-        this.trackEvent(eventType + '-score-' + data.emotion, region.id, String(data.score));
-        region.update({ annotation: this.scoresSummary(region.scores) });
-        this.giveFeedback();
-
-        // Les 4 émotions sont notées : on désélectionne le segment
-        // if (Object.keys(region.scores).length === EMOTIONS.length) {
-        //     this.updateStage(1);
-        // }
+    if (!data.emotion) { return; }
+    var eventType = this.scores[data.emotion] === undefined ? 'add' : 'change';
+    this.scores[data.emotion] = data.score;
+    this.stageThreeView.refreshSelection(this.scores);
+    this.trackEvent(eventType + '-score-' + data.emotion, 'full', String(data.score));
     },
-
     // Helper function, called when the user makes changes that will affect their f1 score
     // If the user has some type of feed back, update the f1 score and notify the user of their progress
     giveFeedback: function() {
@@ -880,6 +931,12 @@ AnnotationStages.prototype = {
         this.trackEvent('play-region', region.id);
     },
 
+    onFinish: function() {
+    this.listenedOnce = true;
+    $('.listen_notice').remove();
+    $('.likert_btn').prop('disabled', false);
+    },
+
     // Attach event handlers for wavesurfer events
     addWaveSurferEvents: function() {
         // this.wavesurfer.enableDragSelection();
@@ -899,6 +956,15 @@ AnnotationStages.prototype = {
         this.wavesurfer.on('region-created', this.trackBeginingOfRegionCreation.bind(this));
         this.wavesurfer.on('region-created', this.switchToStageOneOnCreate.bind(this));
         this.wavesurfer.on('region-removed', this.deleteAnnotation.bind(this));
+
+        // Blocage d'actions avant la fin de la première écoute
+        var my = this;
+        ['mousedown', 'click', 'dblclick'].forEach(function (evt) {
+            document.querySelector('.audio_visual').addEventListener(evt, function (e) {
+                if (!my.listenedOnce) { e.stopPropagation(); e.preventDefault(); }
+            }, true);
+        });
+        this.wavesurfer.on('finish', this.onFinish.bind(this));
     },
 
     // Attach event handlers for stage one events

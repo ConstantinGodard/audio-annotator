@@ -41,6 +41,9 @@ function Annotator() {
         container: '.audio_visual',
         waveColor: '#FF00FF',
         progressColor: '#FF00FF',
+        // Creating a red wider cursor
+        cursorColor: '#ff0000',
+        cursorWidth: 4, 
         // For the spectrogram the height is half the number of fftSamples
         fftSamples: height * 2,
         height: height,
@@ -249,7 +252,8 @@ Annotator.prototype = {
         var my = this;
         $.ajax({
             type: 'POST',
-            url: $.getJSON(postUrl),
+            //url: $.getJSON(postUrl),
+            url: postUrl,
             contentType: 'application/json',
             data: JSON.stringify(content)
         })
