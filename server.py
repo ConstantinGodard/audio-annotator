@@ -35,6 +35,14 @@ class Handler(SimpleHTTPRequestHandler):
             state["current"] = todo[0]
             task = dict(TEMPLATE)
             task["url"] = "/" + quote(todo[0])
+
+            wav_path = Path(todo[0])
+            transcript_path = wav_path.parent / (wav_path.stem + ".transcript.json")
+            if transcript_path.exists():
+                task["transcript"] = json.loads(transcript_path.read_text(encoding="utf-8"))
+            else:
+                task["transcript"] = []
+
             print(f"[{len(done) + 1}/{len(wavs)}] {todo[0]}")
             return self._json(200, {"task": task})
         return super().do_GET()

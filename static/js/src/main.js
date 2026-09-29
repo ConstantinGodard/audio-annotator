@@ -28,7 +28,7 @@ function Annotator() {
 
     // Create color map for spectrogram
     var spectrogramColorMap = colormap({
-        colormap: magma,
+        colormap: magma, //inferno, viridis, magma, plasma, cividis
         nshades: 256,
         format: 'rgb',
         alpha: 1
@@ -143,6 +143,7 @@ Annotator.prototype = {
                 annotationSolutions,
                 alwaysShowTags
             );
+            my.stages.renderTranscript(my.currentTask.transcript);
 
             // set video url
             // $('#tutorial-video').attr('src', tutorialVideoURL);

@@ -29,43 +29,106 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Canvas, {
         
     },
 
-    getFrequencies: function(buffer) {
-        var fftSamples = this.params.fftSamples || 512;
-        var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
-        var bufferLength = buffer.length;
-        var sampleRate = buffer.sampleRate;
-        var frequencies = [];
+    // getFrequencies: function(buffer) {
+    //     var fftSamples = this.params.fftSamples || 512;
+    //     var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
+    //     var bufferLength = buffer.length;
+    //     var sampleRate = buffer.sampleRate;
+    //     var frequencies = [];
 
-        if (! buffer) {
-            this.fireEvent('error', 'Web Audio buffer is not available');
-            return;
-        }
+    //     if (! buffer) {
+    //         this.fireEvent('error', 'Web Audio buffer is not available');
+    //         return;
+    //     }
 
-        var noverlap = this.params.noverlap;
-        if (! noverlap) {
-            var uniqueSamplesPerPx = buffer.length / this.width;
-            noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
-        }
+    //     var noverlap = this.params.noverlap;
+    //     if (! noverlap) {
+    //         var uniqueSamplesPerPx = buffer.length / this.width;
+    //         noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
+    //     }
 
-        var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
+    //     var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
 
-        var maxSlicesCount = Math.floor(bufferLength/ (fftSamples - noverlap));
+    //     var maxSlicesCount = Math.floor(bufferLength/ (fftSamples - noverlap));
 
-        var currentOffset = 0;
+    //     var currentOffset = 0;
 
-        while (currentOffset + fftSamples < channelOne.length) {
-            var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
-            var spectrum = fft.calculateSpectrum(segment);
-            var length = fftSamples / 2 + 1;
-            var array = new Uint8Array(length);
-            for (var j = 0; j < length; j++) {
-                array[j] = Math.max(-255, Math.log10(spectrum[j])*45);
-            }
-            frequencies.push(array);
-            currentOffset += (fftSamples - noverlap);
-        }
+    //     var minFreq = 100;   // <-- à remplacer par ta borne basse en Hz
+    //     var maxFreq = 10000;  // <-- à remplacer par ta borne haute en Hz
+    //     var minBin = Math.floor(minFreq * fftSamples / sampleRate);
+    //     var maxBin = Math.ceil(maxFreq * fftSamples / sampleRate);
+
+    //     while (currentOffset + fftSamples < channelOne.length) {
+    //         var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
+    //         var spectrum = fft.calculateSpectrum(segment);
+    //         var length = fftSamples / 2 + 1;
+    //         var array = new Uint8Array(length);
+    //         for (var j = 0; j < length; j++) {
+    //             array[j] = Math.max(-255, Math.log10(spectrum[j])*45);
+    //         }
+    //         frequencies.push(array.slice(minBin, maxBin)); //frequencies.push(array);
+    //         currentOffset += (fftSamples - noverlap);
+    //     }
         
-        return frequencies;
+    //     return frequencies;
+    // },
+
+    getFrequencies: function(buffer) {
+    var fftSamples = this.params.fftSamples || 512;
+    var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
+    var bufferLength = buffer.length;
+    var sampleRate = buffer.sampleRate;
+
+    var noverlap = this.params.noverlap;
+    if (!noverlap) {
+        var uniqueSamplesPerPx = buffer.length / this.width;
+        noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
+    }
+
+    var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
+    var currentOffset = 0;
+    var allFrames = [];
+
+    while (currentOffset + fftSamples < channelOne.length) {
+        var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
+        var spectrum = fft.calculateSpectrum(segment);
+        var length = fftSamples / 2 + 1;
+        var array = new Uint8Array(length);
+        for (var j = 0; j < length; j++) {
+            array[j] = Math.max(-255, Math.log10(spectrum[j]) * 45);
+        }
+        allFrames.push(array);
+        currentOffset += (fftSamples - noverlap);
+    }
+
+    // énergie totale par bin, sur tous les frames
+    var nBins = allFrames[0].length;
+    var energyPerBin = new Float64Array(nBins);
+    for (var f = 0; f < allFrames.length; f++) {
+        for (var b = 0; b < nBins; b++) {
+            energyPerBin[b] += allFrames[f][b];
+        }
+    }
+
+    // trouve le bin le plus haut qui contient encore une part significative de l'énergie
+    var totalEnergy = energyPerBin.reduce(function(a, b) { return a + b; }, 0);
+    var cumulative = 0;
+    var cutoffBin = nBins - 1;
+    var threshold = 0.999; // garde 99.5% de l'énergie totale
+    for (var b = 0; b < nBins; b++) {
+        cumulative += energyPerBin[b];
+        if (cumulative / totalEnergy >= threshold) {
+            cutoffBin = b;
+            break;
+        }
+    }
+
+    var minBin = Math.floor(100 * fftSamples / sampleRate); // ta borne basse fixe, ex 100 Hz
+    var maxBin = Math.max(cutoffBin, minBin + 1);
+
+    return allFrames.map(function(array) {
+        return array.slice(minBin, maxBin);
+    });
     },
 
     resample: function(oldMatrix) {
@@ -111,22 +174,62 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Canvas, {
         return newMatrix;
     },
 
+    // drawSpectrogram: function (buffer) {
+    //     var pixelRatio = this.params.pixelRatio;
+    //     var length = buffer.duration;
+    //     var height = (this.params.fftSamples / 2) * pixelRatio;
+    //     var frequenciesData = this.getFrequencies(buffer);
+
+    //     var pixels = this.resample(frequenciesData);
+
+    //     var heightFactor = pixelRatio;
+
+    //     for (var i = 0; i < pixels.length; i++) {
+    //         for (var j = 0; j < pixels[i].length; j++) {
+    //             this.waveCc.fillStyle = this.getFrequencyRGB(pixels[i][j]);
+    //             this.waveCc.fillRect(i, height - j * heightFactor, 1, heightFactor);
+    //         }
+    //     }
+    // }
+
+
     drawSpectrogram: function (buffer) {
-        var pixelRatio = this.params.pixelRatio;
-        var length = buffer.duration;
-        var height = (this.params.fftSamples / 2) * pixelRatio;
-        var frequenciesData = this.getFrequencies(buffer);
+    var pixelRatio = this.params.pixelRatio;
+    var length = buffer.duration;
+    //var height = (this.params.fftSamples / 2) * pixelRatio;
+    //var pixels = this.resample(frequenciesData);
+    var frequenciesData = this.getFrequencies(buffer);
+    var pixels = this.resample(frequenciesData);
 
-        var pixels = this.resample(frequenciesData);
+    var height = pixels[0].length * pixelRatio;
+    
 
-        var heightFactor = pixelRatio;
-
-        for (var i = 0; i < pixels.length; i++) {
-            for (var j = 0; j < pixels[i].length; j++) {
-                this.waveCc.fillStyle = this.getFrequencyRGB(pixels[i][j]);
-                this.waveCc.fillRect(i, height - j * heightFactor, 1, heightFactor);
-            }
+    // Bornes calculées sur les percentiles réels, comme côté Python
+    var allValues = [];
+    for (var i = 0; i < pixels.length; i++) {
+        for (var j = 0; j < pixels[i].length; j++) {
+            allValues.push(pixels[i][j]);
         }
+    }
+    allValues.sort(function (a, b) { return a - b; });
+    var percentile = function (p) {
+        var idx = Math.floor((p / 100) * (allValues.length - 1));
+        return allValues[idx];
+    };
+    var vmin = percentile(0);
+    var vmax = percentile(98);
+    var scale = 255 / Math.max(1, vmax - vmin);
+
+    var heightFactor = pixelRatio;
+
+    for (var i = 0; i < pixels.length; i++) {
+        for (var j = 0; j < pixels[i].length; j++) {
+            var v = Math.round((pixels[i][j] - vmin) * scale);
+            v = Math.max(0, Math.min(255, v));
+            this.waveCc.fillStyle = this.getFrequencyRGB(v);
+            this.waveCc.fillRect(i, height - j * heightFactor, 1, heightFactor);
+        }
+    }
     }
 });
 

@@ -339,3 +339,64 @@ input.form-control.duration {
   border-radius: 6px;
   resize: vertical;
 }
+
+.transcript_box {
+  max-width: 1100px;
+  margin: 4px auto 10px;
+  padding: 6px 10px;
+  max-height: 70px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+.transcript_box .word.current_word {
+  background-color: #1976d2;
+  color: #fff;
+  border-radius: 3px;
+}
+
+body { margin-top: 0.2 !important; padding-top: 0.2 !important; }
+
+.labels {
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+.labels label_container {
+  height: 0 !important;
+}
+
+
+.tag_container, .emotions_container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.listen_notice {
+  margin-top: 0 !important;
+  padding-top: 2px;
+}
+
+.play_bar {
+  height: 15px !important;
+  min-height: 15px !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+.play_bar .btn {
+  height: 20px !important;
+  line-height: 20px !important;
+  width: 20px !important;
+  padding: 0 !important;
+}
+
+
+.transcript_note {
+  max-width: 1100px;
+  margin: 2px auto 8px;
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+}

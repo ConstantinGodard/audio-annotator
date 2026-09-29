@@ -702,6 +702,26 @@ AnnotationStages.prototype = {
         }
     },
 
+    renderTranscript: function(words) {
+    var box = $('.transcript_box');
+    box.empty();
+    (words || []).forEach(function (w) {
+        var span = $('<span>', { class: 'word', text: w.word + ' ' });
+        span.attr('data-start', w.start).attr('data-end', w.end);
+        box.append(span);
+    });
+    },
+
+    highlightTranscript: function() {
+    var t = this.wavesurfer.getCurrentTime();
+    $('.transcript_box .word').each(function () {
+        var el = $(this);
+        var isCurrent = t >= parseFloat(el.attr('data-start')) && t < parseFloat(el.attr('data-end'));
+        el.toggleClass('current_word', isCurrent);
+    });
+    },
+
+
     createFullRegion: function() {
     if (!this.wavesurfer.regions) { return; }
     if (Object.keys(this.wavesurfer.regions.list).length > 0) { return; }
@@ -956,6 +976,8 @@ AnnotationStages.prototype = {
         this.wavesurfer.on('region-created', this.trackBeginingOfRegionCreation.bind(this));
         this.wavesurfer.on('region-created', this.switchToStageOneOnCreate.bind(this));
         this.wavesurfer.on('region-removed', this.deleteAnnotation.bind(this));
+        this.wavesurfer.on('audioprocess', this.highlightTranscript.bind(this));
+        this.wavesurfer.on('seek', this.highlightTranscript.bind(this));
 
         // Blocage d'actions avant la fin de la première écoute
         var my = this;
