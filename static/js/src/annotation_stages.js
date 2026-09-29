@@ -155,14 +155,7 @@ StageThreeView.prototype = {
         this.dom = container.append([message, tagContainer]); //this.dom = container.append([message, time, tagContainer]);
     },
 
-    // Replace the proximity and annotation elements with the new elements that contain the
-    // tags in the proximityTags and annotationTags lists
-    // updateTagContents: function(proximityTags, annotationTags) {
-    //     $('.tag_container', this.dom).empty();
-    //     var proximity = this.createProximityTags(proximityTags);
-    //     var annotation = this.createAnnotationTags(annotationTags);
-    //     $('.tag_container', this.dom).append([annotation, proximity]);
-    // },
+
     updateTagContents: function(proximityTags, annotationTags) {
         $('.tag_container', this.dom).empty();
         $('.tag_container', this.dom).append(this.createAnnotationTags());
@@ -202,7 +195,6 @@ StageThreeView.prototype = {
         return proximity.append([proximityLabel, proximityContainer]);
     },
 
-    // Create annotation tag elements
     createAnnotationTags: function() {
     var my = this;
     var wrapper = $('<div>', { class: 'emotions_container' });
@@ -243,13 +235,18 @@ StageThreeView.prototype = {
         block.append(row);
         wrapper.append(block);
     });
+
     var comment = $('<textarea>', {
-    class: 'comment_box',
-    placeholder: 'Commentaire (optionnel) : audio inaudible, difficile de trancher entre deux expressions...'
+        class: 'comment_box',
+        placeholder: 'Commentaire (optionnel) : audio inaudible, difficile de trancher entre deux expressions...'
     });
-    // Empêche la barre espace et les autres touches de déclencher les raccourcis du lecteur
     comment.on('keydown keyup keypress', function (e) { e.stopPropagation(); });
-    wrapper.append(comment);
+
+    // AU LIEU DE wrapper.append(comment), on la place directement
+    // sous le bouton submit, qui existe déjà dans le DOM statique.
+    $('.submit_container .comment_box').remove();
+    $('.submit_container').append(comment);
+
     return wrapper;
     },
 
@@ -267,40 +264,7 @@ StageThreeView.prototype = {
         $('.duration', this.dom).val(Util.secondsToString(region.end - region.start));
     },
 
-    // Update the elements of the proximity and annotation tags to highlight
-    // which tags match the selected region's current annotation and proximity
-    // updateSelectedTags: function(region) {
-    //     $('.annotation_tag', this.dom).removeClass('selected');
-    //     $('.proximity_tag', this.dom).removeClass('selected');
-    //     $('.custom_tag input', this.dom).val('');
-    //     $('.annotation_tag', this.dom).removeClass('disabled');
-    //     $('.proximity_tag', this.dom).removeClass('disabled');
 
-    //     if (region.annotation) {
-    //         var selectedTags = $('.annotation_tag', this.dom).filter(function () {
-    //             return this.innerHTML === region.annotation;
-    //         });
-    //         if (selectedTags.length > 0) {
-    //             selectedTags.addClass('selected');       
-    //         } else {
-    //             $('.custom_tag input', this.dom).val(region.annotation); 
-    //         }
-    //     }
-
-    //     if (region.proximity) {
-    //         var selectedTags = $('.proximity_tag', this.dom).filter(function () {
-    //             return this.innerHTML === region.proximity;
-    //         });
-    //         selectedTags.addClass('selected');
-    //     }
-    // }
-//     updateSelectedTags: function(region) {
-//     $('.likert_btn').removeClass('selected disabled');
-//     var scores = (region && region.scores) || {};
-//     Object.keys(scores).forEach(function (key) {
-//         $('.likert_btn[data-emotion="' + key + '"][data-score="' + scores[key] + '"]').addClass('selected');
-//     });
-//     },
     updateSelectedTags: function() {},
 
     refreshSelection: function(scores) {
@@ -375,17 +339,7 @@ AnnotationStages.prototype = {
         return regionData;
     },
 
-    // Return an array of all the annotations the user has made for this clip
-    // getAnnotations: function() {
-    //     var annotationData = [];
-    //     if (this.wavesurfer.regions) {
-    //         for (var region_id in this.wavesurfer.regions.list) {
-    //             var region = this.wavesurfer.regions.list[region_id];
-    //             annotationData.push(this.getAnnotationData(region));
-    //         }
-    //     }
-    //     return annotationData;
-    // },
+
     getAnnotations: function() {
     return [{
         id: 'full',
@@ -406,36 +360,6 @@ AnnotationStages.prototype = {
         }
         return annotationData;
     },
-
-    // Check that all the annotations have the required tags, if not alert the user
-    // annotationDataValidationCheck: function() {
-    //     if (this.wavesurfer.regions) {
-    //         for (var region_id in this.wavesurfer.regions.list) {
-    //             var region = this.wavesurfer.regions.list[region_id];
-    //             if (Object.keys(region.scores || {}).length < EMOTIONS.length) {
-    //                 Message.notifyAlert('Note les 4 émotions pour chaque segment avant de soumettre.');
-    //                 return false;
-    //             }
-    //         }
-    //     }
-    //     return true;
-    // },
-
-    // annotationDataValidationCheck: function() {
-    // var regions = this.wavesurfer.regions ? Object.keys(this.wavesurfer.regions.list) : [];
-    // if (regions.length === 0) {
-    //     Message.notifyAlert("L'audio n'est pas encore chargé.");
-    //     return false;
-    // }
-    // for (var i = 0; i < regions.length; i++) {
-    //     var region = this.wavesurfer.regions.list[regions[i]];
-    //     if (Object.keys(region.scores || {}).length < EMOTIONS.length) {
-    //         Message.notifyAlert('Note les 4 émotions avant de soumettre.');
-    //         return false;
-    //     }
-    // }
-    // return true;
-    // },
 
     annotationDataValidationCheck: function() {
     if (Object.keys(this.scores).length < EMOTIONS.length) {
@@ -472,26 +396,7 @@ AnnotationStages.prototype = {
         this.currentRegion = region;
     },
 
-    // clickDeselectCurrentRegion: function() {
-    //     if (this.blockDeselect) {
-    //         // A new region was created, block the subsequent click to not deselect
-    //         this.blockDeselect = false;
-    //     } else {
-    //         if (this.currentRegion != null) {
-    //             // Disable drag and resize editing for the old current region. 
-    //             // Also remove the highlight of the label and region border
-    //             this.currentRegion.update({drag: false, resize: false});
-    //             $(this.currentRegion.element).removeClass('current_region');
-    //             $(this.currentRegion.annotationLabel.element).removeClass('current_label');
 
-    //             // Remove the highlated label and disable.
-    //             $('.annotation_tag', this.dom).removeClass('selected');
-    //             $('.proximity_tag', this.dom).removeClass('selected');
-    //             $('.annotation_tag', this.dom).addClass('disabled');
-    //             $('.proximity_tag', this.dom).addClass('disabled');
-    //         }
-    //     }
-    // },
     clickDeselectCurrentRegion: function() { return; },
 
     // Switch stages and the current region

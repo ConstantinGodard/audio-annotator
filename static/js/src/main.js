@@ -137,6 +137,10 @@ Annotator.prototype = {
             // var tutorialVideoURL = my.currentTask.tutorialVideoURL;
             var alwaysShowTags = my.currentTask.alwaysShowTags;
             var instructions = my.currentTask.instructions;
+            var filename = decodeURIComponent(my.currentTask.url.split('/').pop()).replace(/\.wav$/i, '');
+            var match = filename.match(/^(.*)_sample_(\d+)/);
+            var displayName = match ? (match[1].trim() + ' - extrait n°' + match[2]) : filename;
+            $('.sample_name_display').text(displayName);
             my.stages.reset(
                 proximityTags,
                 annotationTags,

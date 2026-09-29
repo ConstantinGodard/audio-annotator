@@ -29,107 +29,107 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Canvas, {
         
     },
 
-    // getFrequencies: function(buffer) {
-    //     var fftSamples = this.params.fftSamples || 512;
-    //     var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
-    //     var bufferLength = buffer.length;
-    //     var sampleRate = buffer.sampleRate;
-    //     var frequencies = [];
-
-    //     if (! buffer) {
-    //         this.fireEvent('error', 'Web Audio buffer is not available');
-    //         return;
-    //     }
-
-    //     var noverlap = this.params.noverlap;
-    //     if (! noverlap) {
-    //         var uniqueSamplesPerPx = buffer.length / this.width;
-    //         noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
-    //     }
-
-    //     var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
-
-    //     var maxSlicesCount = Math.floor(bufferLength/ (fftSamples - noverlap));
-
-    //     var currentOffset = 0;
-
-    //     var minFreq = 100;   // <-- à remplacer par ta borne basse en Hz
-    //     var maxFreq = 10000;  // <-- à remplacer par ta borne haute en Hz
-    //     var minBin = Math.floor(minFreq * fftSamples / sampleRate);
-    //     var maxBin = Math.ceil(maxFreq * fftSamples / sampleRate);
-
-    //     while (currentOffset + fftSamples < channelOne.length) {
-    //         var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
-    //         var spectrum = fft.calculateSpectrum(segment);
-    //         var length = fftSamples / 2 + 1;
-    //         var array = new Uint8Array(length);
-    //         for (var j = 0; j < length; j++) {
-    //             array[j] = Math.max(-255, Math.log10(spectrum[j])*45);
-    //         }
-    //         frequencies.push(array.slice(minBin, maxBin)); //frequencies.push(array);
-    //         currentOffset += (fftSamples - noverlap);
-    //     }
-        
-    //     return frequencies;
-    // },
-
     getFrequencies: function(buffer) {
-    var fftSamples = this.params.fftSamples || 512;
-    var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
-    var bufferLength = buffer.length;
-    var sampleRate = buffer.sampleRate;
+        var fftSamples = this.params.fftSamples || 512;
+        var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
+        var bufferLength = buffer.length;
+        var sampleRate = buffer.sampleRate;
+        var frequencies = [];
 
-    var noverlap = this.params.noverlap;
-    if (!noverlap) {
-        var uniqueSamplesPerPx = buffer.length / this.width;
-        noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
-    }
-
-    var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
-    var currentOffset = 0;
-    var allFrames = [];
-
-    while (currentOffset + fftSamples < channelOne.length) {
-        var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
-        var spectrum = fft.calculateSpectrum(segment);
-        var length = fftSamples / 2 + 1;
-        var array = new Uint8Array(length);
-        for (var j = 0; j < length; j++) {
-            array[j] = Math.max(-255, Math.log10(spectrum[j]) * 45);
+        if (! buffer) {
+            this.fireEvent('error', 'Web Audio buffer is not available');
+            return;
         }
-        allFrames.push(array);
-        currentOffset += (fftSamples - noverlap);
-    }
 
-    // énergie totale par bin, sur tous les frames
-    var nBins = allFrames[0].length;
-    var energyPerBin = new Float64Array(nBins);
-    for (var f = 0; f < allFrames.length; f++) {
-        for (var b = 0; b < nBins; b++) {
-            energyPerBin[b] += allFrames[f][b];
+        var noverlap = this.params.noverlap;
+        if (! noverlap) {
+            var uniqueSamplesPerPx = buffer.length / this.width;
+            noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
         }
-    }
 
-    // trouve le bin le plus haut qui contient encore une part significative de l'énergie
-    var totalEnergy = energyPerBin.reduce(function(a, b) { return a + b; }, 0);
-    var cumulative = 0;
-    var cutoffBin = nBins - 1;
-    var threshold = 0.999; // garde 99.5% de l'énergie totale
-    for (var b = 0; b < nBins; b++) {
-        cumulative += energyPerBin[b];
-        if (cumulative / totalEnergy >= threshold) {
-            cutoffBin = b;
-            break;
+        var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
+
+        var maxSlicesCount = Math.floor(bufferLength/ (fftSamples - noverlap));
+
+        var currentOffset = 0;
+
+        var minFreq = 100;   
+        var maxFreq = 17000//12800;  
+        var minBin = Math.floor(minFreq * fftSamples / sampleRate);
+        var maxBin = Math.ceil(maxFreq * fftSamples / sampleRate);
+
+        while (currentOffset + fftSamples < channelOne.length) {
+            var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
+            var spectrum = fft.calculateSpectrum(segment);
+            var length = fftSamples / 2 + 1;
+            var array = new Uint8Array(length);
+            for (var j = 0; j < length; j++) {
+                array[j] = Math.max(-255, Math.log10(spectrum[j])*45);
+            }
+            frequencies.push(array.slice(minBin, maxBin)); //frequencies.push(array);
+            currentOffset += (fftSamples - noverlap);
         }
-    }
-
-    var minBin = Math.floor(100 * fftSamples / sampleRate); // ta borne basse fixe, ex 100 Hz
-    var maxBin = Math.max(cutoffBin, minBin + 1);
-
-    return allFrames.map(function(array) {
-        return array.slice(minBin, maxBin);
-    });
+        
+        return frequencies;
     },
+
+    // getFrequencies: function(buffer) {
+    // var fftSamples = this.params.fftSamples || 512;
+    // var channelOne = Array.prototype.slice.call(buffer.getChannelData(0));
+    // var bufferLength = buffer.length;
+    // var sampleRate = buffer.sampleRate;
+
+    // var noverlap = this.params.noverlap;
+    // if (!noverlap) {
+    //     var uniqueSamplesPerPx = buffer.length / this.width;
+    //     noverlap = Math.max(0, Math.round(fftSamples - uniqueSamplesPerPx));
+    // }
+
+    // var fft = new WaveSurfer.FFT(fftSamples, sampleRate);
+    // var currentOffset = 0;
+    // var allFrames = [];
+
+    // while (currentOffset + fftSamples < channelOne.length) {
+    //     var segment = channelOne.slice(currentOffset, currentOffset + fftSamples);
+    //     var spectrum = fft.calculateSpectrum(segment);
+    //     var length = fftSamples / 2 + 1;
+    //     var array = new Uint8Array(length);
+    //     for (var j = 0; j < length; j++) {
+    //         array[j] = Math.max(-255, Math.log10(spectrum[j]) * 45);
+    //     }
+    //     allFrames.push(array);
+    //     currentOffset += (fftSamples - noverlap);
+    // }
+
+    // // énergie totale par bin, sur tous les frames
+    // var nBins = allFrames[0].length;
+    // var energyPerBin = new Float64Array(nBins);
+    // for (var f = 0; f < allFrames.length; f++) {
+    //     for (var b = 0; b < nBins; b++) {
+    //         energyPerBin[b] += allFrames[f][b];
+    //     }
+    // }
+
+    // // trouve le bin le plus haut qui contient encore une part significative de l'énergie
+    // var totalEnergy = energyPerBin.reduce(function(a, b) { return a + b; }, 0);
+    // var cumulative = 0;
+    // var cutoffBin = nBins - 1;
+    // var threshold = 0.999; // garde 99.5% de l'énergie totale
+    // for (var b = 0; b < nBins; b++) {
+    //     cumulative += energyPerBin[b];
+    //     if (cumulative / totalEnergy >= threshold) {
+    //         cutoffBin = b;
+    //         break;
+    //     }
+    // }
+
+    // var minBin = Math.floor(100 * fftSamples / sampleRate); // ta borne basse fixe, ex 100 Hz
+    // var maxBin = Math.max(cutoffBin, minBin + 1);
+
+    // return allFrames.map(function(array) {
+    //     return array.slice(minBin, maxBin);
+    // });
+    // },
 
     resample: function(oldMatrix) {
         var columnsNumber = this.width;

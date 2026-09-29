@@ -15,7 +15,7 @@
 }
 
 .audio_visual wave {
-  height: 150!important; /* 276px pzr défaut dans le repo*/
+  height: 195px !important; /* 276px pzr défaut dans le repo*/
 }
 
 .audio_visual > wave {
@@ -24,12 +24,12 @@
 
 .audio_visual > wave > canvas {
   background-color: #EAEAEA;
-  width: 0px;
+  width: 10px;
 }
 
 .audio_visual wave canvas {
   position: relative;
-  top: 10px !important;
+  /*top: 10px !important;*/
 }
 
 .annotation {   
@@ -329,15 +329,15 @@ input.form-control.duration {
 }
 
 .comment_box {
-  grid-column: 1 / -1;
   width: 100%;
-  height: 44px;
   box-sizing: border-box;
+  margin-top: 8px;
   padding: 4px 8px;
   font-size: 13px;
   border: 1px solid #ccc !important;
   border-radius: 6px;
   resize: vertical;
+  height: 70px;
 }
 
 .transcript_box {
@@ -369,6 +369,23 @@ body { margin-top: 0.2 !important; padding-top: 0.2 !important; }
   height: 0 !important;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* empêche le scroll global */
+}
+
+#task-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.creation_stage_container {
+  min-height: unset; /* tu avais 303px fixe, source probable du débordement */
+  flex: 1 1 auto;
+  overflow: hidden;
+}
 
 .tag_container, .emotions_container {
   margin-top: 0 !important;
@@ -380,8 +397,8 @@ body { margin-top: 0.2 !important; padding-top: 0.2 !important; }
 }
 
 .play_bar {
-  height: 15px !important;
-  min-height: 15px !important;
+  height: 20px !important;
+  min-height: 20px !important;
   margin-bottom: 0 !important;
   padding: 0 !important;
 }
@@ -399,4 +416,44 @@ body { margin-top: 0.2 !important; padding-top: 0.2 !important; }
   font-size: 11px;
   color: #999;
   text-align: center;
+}
+
+.annotation {
+  display: grid;
+  grid-template-columns: 1fr 220px; /* colonne principale + colonne bouton */
+  grid-template-areas:
+    "labels        labels"
+    "audio_visual  audio_visual"
+    "transcript    transcript"
+    "note          note"
+    "play_bar      play_bar"
+    "hidden        hidden"
+    "stage         submit";
+  gap: 6px;
+  width: 97%;
+  margin: auto;
+}
+
+.labels               { grid-area: labels; }
+.audio_visual          { grid-area: audio_visual; }
+.transcript_box         { grid-area: transcript; }
+.transcript_note        { grid-area: note; }
+.play_bar               { grid-area: play_bar; }
+.hidden_img              { grid-area: hidden; }
+.creation_stage_container { grid-area: stage; }
+
+.submit_container {
+  grid-area: submit;
+  align-self: center;
+  justify-self: stretch;
+  margin: 0 !important;      /* écrase la règle width:97%/margin:auto du haut */
+  width: 100% !important;
+}
+
+.sample_name_display {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 0;
+  color: #333;
 }
