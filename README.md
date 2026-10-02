@@ -1,4 +1,4 @@
-### audio-annotator
+# audio-annotator
 
 [![MIT licensed](https://img.shields.io/badge/license-BSD2-blue.svg)](https://github.com/CrowdCurio/audio-annotator/blob/master/LICENSE.txt)
 
