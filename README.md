@@ -86,22 +86,18 @@ audio-annotator/
     │   └── sample_data.json      Sample task data
     └── js/
         ├── colormap/
-        │   ├── gen_colormap.sh   Generates colormap.min.js
-        │   ├── gen_colormap.js   Input for gen_colormap.sh (defines the magma colour scheme)
         │   └── colormap.min.js   Generated colormap used by the spectrogram
         ├── lib/                  Unmodified external libraries
         └── src/
             ├── main.js                       UrbanEars: builds/updates the interface when a task loads, submits task data
             ├── annotation_stages.js          Annotation workflow: Likert scales, definitions, validation
             ├── components.js                 UI components: play bar, timestamps, workflow buttons
-            ├── message.js                    User notifications (Materialize toasts)
+            ├── message.js                    User notifications (Materialize toasts,inherited, unused here)
             ├── hidden_image.js               Visual feedback mechanism (inherited, unused here)
             ├── wavesurfer.drawer.extended.js Spectrogram, waveform and invisible visualizations
             ├── wavesurfer.labels.js          Labels displayed above the visualization
             └── wavesurfer.regions.js         Modified wavesurfer.js regions plugin
 ```
-
-To regenerate the colormap after editing `gen_colormap.js`, run `source gen_colormap.sh` from the `colormap/` directory.
 
 ## Citation and license
 
