@@ -1,4 +1,4 @@
-# audio-annotator
+### audio-annotator
 
 [![MIT licensed](https://img.shields.io/badge/license-BSD2-blue.svg)](https://github.com/CrowdCurio/audio-annotator/blob/master/LICENSE.txt)
 
@@ -20,10 +20,10 @@ It has 3 types of audio visualizations (wavesurfer.params.visualization)
 The feature enabling the possibility to select a region in the rectangle was removed (useless for our case).
 
 Example of usage:
-<kbd>
-<video src="https://github.com/ConstantinGodard/audio-annotator/blob/main/static/video/Demo_app_annotation_compressed.mp4" controls width="800">
-<video>
-</kbd>
+
+https://github.com/user-attachments/assets/9b9ad4a2-ab24-477b-befc-a0f4ab968272
+
+
 
 ### Feedback mechanisms
 audio-annotator also provides mechanisms for providing real-time feedback to the user based on their annotations, but this feature was also removed for our usage.
