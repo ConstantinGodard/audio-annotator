@@ -11,7 +11,7 @@ When used in academic work please cite:
 > M. Cartwright, A. Seals, J. Salamon, A. Williams, S. Mikloska, D. MacConnell, E. Law, J. Bello, and O. Nov. "Seeing sound: Investigating the effects of visualizations and complexity on crowdsourced audio annotations." In *Proceedings of the ACM on Human-Computer Interaction*, 1(1), 2017.
 
 ### Description
-audio-annotator is a web interface that allows users to annotate audio recordings, which was then adapted for emotion detection in order to create a dataset for Speech Emotion Recognition. Every feature useless for emotion annotation was therfore removed from the initial repository. The usecase of this repository is for french emotion annotation, therefore, every single sentences in the UI web app is in french, hence helping french speaking annotators.
+audio-annotator is a web interface that allows users to annotate audio recordings, which was then adapted for emotion detection in order to create a dataset for Speech Emotion Recognition. Every feature useless for emotion annotation was therfore removed from the initial repository. The usecase of this repository is for french emotion annotation, therefore, every single sentences in the UI web app is in french, hence helping french speaking annotators. 
 
 It has 3 types of audio visualizations (wavesurfer.params.visualization)
    1. invisible (appears as a blank rectangle)
@@ -23,7 +23,12 @@ Example of usage:
 
 https://github.com/user-attachments/assets/9b9ad4a2-ab24-477b-befc-a0f4ab968272
 
-
+### Audio Credential
+For the demo in this repository, we used audio files extracted from the first 3 videos from the youtube channel @GestesTechniquesECOS : 
+   * 0 - Vidéo introductive
+   * 1 - Massage cardiaque externe (adulte)
+   * 2 - Ponction lombaire
+One can find the timestamp of each audio sample directly in their name, eg: 0 - Vidéo introductive_sample_1_56.5426s-80.5853s.wav => from second 56.5426 to second 80.5853.
 
 ### Feedback mechanisms
 audio-annotator also provides mechanisms for providing real-time feedback to the user based on their annotations, but this feature was also removed for our usage.
