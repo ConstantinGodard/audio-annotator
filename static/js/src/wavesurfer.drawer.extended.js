@@ -267,7 +267,7 @@ WaveSurfer.util.extend(WaveSurfer.Drawer, {
         var visualization = this.params.visualization;
         if (visualization === 'invisible') {
             //draw nothing
-        } else if (visualization === 'spectrogram' && buffer) {
+        } else if (visualization === 'spectrogram' && buffer) { // spectrogram, waveform
             this.drawSpectrogram(buffer);
         } else {
             this.params.barWidth ?

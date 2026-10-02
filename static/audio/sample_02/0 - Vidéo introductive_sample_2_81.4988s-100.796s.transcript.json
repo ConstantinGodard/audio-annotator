@@ -1,0 +1,392 @@
+[
+  {
+    "word": "Le",
+    "start": 0.0,
+    "end": 0.18
+  },
+  {
+    "word": "geste,",
+    "start": 0.18,
+    "end": 0.6
+  },
+  {
+    "word": "ça",
+    "start": 0.6,
+    "end": 0.76
+  },
+  {
+    "word": "correspond",
+    "start": 0.76,
+    "end": 1.0
+  },
+  {
+    "word": "à",
+    "start": 1.0,
+    "end": 1.52
+  },
+  {
+    "word": "un",
+    "start": 1.52,
+    "end": 1.86
+  },
+  {
+    "word": "pincement",
+    "start": 1.86,
+    "end": 2.24
+  },
+  {
+    "word": "au",
+    "start": 2.24,
+    "end": 2.34
+  },
+  {
+    "word": "niveau",
+    "start": 2.34,
+    "end": 2.48
+  },
+  {
+    "word": "de",
+    "start": 2.48,
+    "end": 2.64
+  },
+  {
+    "word": "l",
+    "start": 2.64,
+    "end": 2.68
+  },
+  {
+    "word": "'épaule",
+    "start": 2.68,
+    "end": 2.96
+  },
+  {
+    "word": "qui",
+    "start": 2.96,
+    "end": 3.32
+  },
+  {
+    "word": "peut",
+    "start": 3.32,
+    "end": 3.5
+  },
+  {
+    "word": "être",
+    "start": 3.5,
+    "end": 3.72
+  },
+  {
+    "word": "douloureux",
+    "start": 3.72,
+    "end": 4.34
+  },
+  {
+    "word": "pour",
+    "start": 4.34,
+    "end": 4.7
+  },
+  {
+    "word": "tester",
+    "start": 4.7,
+    "end": 4.94
+  },
+  {
+    "word": "votre",
+    "start": 4.94,
+    "end": 5.16
+  },
+  {
+    "word": "sensibilité.",
+    "start": 5.16,
+    "end": 5.8
+  },
+  {
+    "word": "Il",
+    "start": 6.3,
+    "end": 6.38
+  },
+  {
+    "word": "y",
+    "start": 6.38,
+    "end": 6.38
+  },
+  {
+    "word": "a",
+    "start": 6.38,
+    "end": 6.38
+  },
+  {
+    "word": "des",
+    "start": 6.38,
+    "end": 6.48
+  },
+  {
+    "word": "contraindications",
+    "start": 6.48,
+    "end": 6.94
+  },
+  {
+    "word": "aux",
+    "start": 6.94,
+    "end": 7.24
+  },
+  {
+    "word": "gestes",
+    "start": 7.24,
+    "end": 7.7
+  },
+  {
+    "word": "et",
+    "start": 7.7,
+    "end": 7.88
+  },
+  {
+    "word": "notamment",
+    "start": 7.88,
+    "end": 8.08
+  },
+  {
+    "word": "la",
+    "start": 8.08,
+    "end": 8.28
+  },
+  {
+    "word": "prise",
+    "start": 8.28,
+    "end": 8.44
+  },
+  {
+    "word": "de",
+    "start": 8.44,
+    "end": 8.56
+  },
+  {
+    "word": "traitement",
+    "start": 8.56,
+    "end": 8.84
+  },
+  {
+    "word": "anti",
+    "start": 8.84,
+    "end": 9.16
+  },
+  {
+    "word": "-co",
+    "start": 9.16,
+    "end": 9.36
+  },
+  {
+    "word": "-agulant,",
+    "start": 9.36,
+    "end": 9.64
+  },
+  {
+    "word": "est",
+    "start": 9.72,
+    "end": 9.74
+  },
+  {
+    "word": "-ce",
+    "start": 9.74,
+    "end": 9.82
+  },
+  {
+    "word": "que",
+    "start": 9.82,
+    "end": 9.88
+  },
+  {
+    "word": "vous",
+    "start": 9.88,
+    "end": 9.98
+  },
+  {
+    "word": "prenez",
+    "start": 9.98,
+    "end": 10.26
+  },
+  {
+    "word": "des",
+    "start": 10.26,
+    "end": 10.4
+  },
+  {
+    "word": "traitements",
+    "start": 10.4,
+    "end": 10.72
+  },
+  {
+    "word": "?",
+    "start": 10.72,
+    "end": 11.46
+  },
+  {
+    "word": "Non,",
+    "start": 11.46,
+    "end": 11.6
+  },
+  {
+    "word": "parfait.",
+    "start": 11.86,
+    "end": 12.36
+  },
+  {
+    "word": "Avant",
+    "start": 12.8,
+    "end": 13.12
+  },
+  {
+    "word": "de",
+    "start": 13.12,
+    "end": 13.22
+  },
+  {
+    "word": "réaliser",
+    "start": 13.22,
+    "end": 13.54
+  },
+  {
+    "word": "le",
+    "start": 13.54,
+    "end": 13.64
+  },
+  {
+    "word": "geste,",
+    "start": 13.64,
+    "end": 14.02
+  },
+  {
+    "word": "je",
+    "start": 14.12,
+    "end": 14.12
+  },
+  {
+    "word": "vais",
+    "start": 14.12,
+    "end": 14.18
+  },
+  {
+    "word": "moi",
+    "start": 14.18,
+    "end": 14.36
+  },
+  {
+    "word": "me",
+    "start": 14.36,
+    "end": 14.42
+  },
+  {
+    "word": "laver",
+    "start": 14.42,
+    "end": 14.62
+  },
+  {
+    "word": "les",
+    "start": 14.62,
+    "end": 14.72
+  },
+  {
+    "word": "mains,",
+    "start": 14.72,
+    "end": 14.88
+  },
+  {
+    "word": "mais",
+    "start": 15.0,
+    "end": 15.04
+  },
+  {
+    "word": "il",
+    "start": 15.04,
+    "end": 15.08
+  },
+  {
+    "word": "faut",
+    "start": 15.08,
+    "end": 15.18
+  },
+  {
+    "word": "d",
+    "start": 15.18,
+    "end": 15.26
+  },
+  {
+    "word": "'abord",
+    "start": 15.26,
+    "end": 15.34
+  },
+  {
+    "word": "que",
+    "start": 15.34,
+    "end": 15.46
+  },
+  {
+    "word": "vous",
+    "start": 15.46,
+    "end": 15.56
+  },
+  {
+    "word": "soyez",
+    "start": 15.56,
+    "end": 15.82
+  },
+  {
+    "word": "d",
+    "start": 15.82,
+    "end": 16.06
+  },
+  {
+    "word": "'accord,",
+    "start": 16.06,
+    "end": 16.26
+  },
+  {
+    "word": "on",
+    "start": 16.68,
+    "end": 16.78
+  },
+  {
+    "word": "est",
+    "start": 16.78,
+    "end": 16.88
+  },
+  {
+    "word": "bon,",
+    "start": 16.88,
+    "end": 17.02
+  },
+  {
+    "word": "parfait,",
+    "start": 17.56,
+    "end": 17.82
+  },
+  {
+    "word": "allez,",
+    "start": 18.16,
+    "end": 18.26
+  },
+  {
+    "word": "je",
+    "start": 18.32,
+    "end": 18.38
+  },
+  {
+    "word": "me",
+    "start": 18.38,
+    "end": 18.44
+  },
+  {
+    "word": "laver",
+    "start": 18.44,
+    "end": 18.58
+  },
+  {
+    "word": "les",
+    "start": 18.58,
+    "end": 18.7
+  },
+  {
+    "word": "mains.",
+    "start": 18.7,
+    "end": 18.8
+  }
+]

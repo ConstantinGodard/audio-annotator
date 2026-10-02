@@ -1,0 +1,367 @@
+[
+  {
+    "word": "J",
+    "start": 0.85,
+    "end": 1.45
+  },
+  {
+    "word": "'ai",
+    "start": 1.45,
+    "end": 1.49
+  },
+  {
+    "word": "vérifié",
+    "start": 1.49,
+    "end": 1.75
+  },
+  {
+    "word": "que",
+    "start": 1.75,
+    "end": 1.85
+  },
+  {
+    "word": "le",
+    "start": 1.85,
+    "end": 1.93
+  },
+  {
+    "word": "patient",
+    "start": 1.93,
+    "end": 2.11
+  },
+  {
+    "word": "l",
+    "start": 2.11,
+    "end": 2.27
+  },
+  {
+    "word": "'était",
+    "start": 2.27,
+    "end": 2.31
+  },
+  {
+    "word": "bien",
+    "start": 2.31,
+    "end": 2.51
+  },
+  {
+    "word": "installé",
+    "start": 2.51,
+    "end": 3.05
+  },
+  {
+    "word": "en",
+    "start": 3.05,
+    "end": 3.71
+  },
+  {
+    "word": "position",
+    "start": 3.71,
+    "end": 3.95
+  },
+  {
+    "word": "à",
+    "start": 3.95,
+    "end": 4.19
+  },
+  {
+    "word": "6",
+    "start": 4.19,
+    "end": 4.33
+  },
+  {
+    "word": "ou",
+    "start": 4.33,
+    "end": 4.49
+  },
+  {
+    "word": "à",
+    "start": 4.49,
+    "end": 4.57
+  },
+  {
+    "word": "l",
+    "start": 4.57,
+    "end": 4.67
+  },
+  {
+    "word": "'onger",
+    "start": 4.67,
+    "end": 4.89
+  },
+  {
+    "word": "et",
+    "start": 4.89,
+    "end": 5.17
+  },
+  {
+    "word": "je",
+    "start": 5.17,
+    "end": 5.23
+  },
+  {
+    "word": "vais",
+    "start": 5.23,
+    "end": 5.29
+  },
+  {
+    "word": "commencer",
+    "start": 5.29,
+    "end": 5.57
+  },
+  {
+    "word": "par",
+    "start": 5.57,
+    "end": 5.73
+  },
+  {
+    "word": "lui",
+    "start": 5.73,
+    "end": 5.83
+  },
+  {
+    "word": "penser",
+    "start": 5.83,
+    "end": 5.95
+  },
+  {
+    "word": "les",
+    "start": 5.95,
+    "end": 6.19
+  },
+  {
+    "word": "poules",
+    "start": 6.19,
+    "end": 6.39
+  },
+  {
+    "word": "gauche.",
+    "start": 6.39,
+    "end": 6.83
+  },
+  {
+    "word": "Allez,",
+    "start": 7.33,
+    "end": 7.43
+  },
+  {
+    "word": "je",
+    "start": 7.49,
+    "end": 7.57
+  },
+  {
+    "word": "commence",
+    "start": 7.57,
+    "end": 7.87
+  },
+  {
+    "word": "à",
+    "start": 7.87,
+    "end": 8.29
+  },
+  {
+    "word": "gauche.",
+    "start": 8.29,
+    "end": 8.47
+  },
+  {
+    "word": "Vous",
+    "start": 9.15,
+    "end": 9.25
+  },
+  {
+    "word": "sentez",
+    "start": 9.25,
+    "end": 9.55
+  },
+  {
+    "word": "bien,",
+    "start": 9.55,
+    "end": 9.79
+  },
+  {
+    "word": "ça",
+    "start": 10.21,
+    "end": 10.63
+  },
+  {
+    "word": "fait",
+    "start": 10.63,
+    "end": 10.75
+  },
+  {
+    "word": "pas",
+    "start": 10.75,
+    "end": 10.87
+  },
+  {
+    "word": "trop",
+    "start": 10.87,
+    "end": 11.01
+  },
+  {
+    "word": "mal,",
+    "start": 11.01,
+    "end": 11.27
+  },
+  {
+    "word": "parfait.",
+    "start": 11.67,
+    "end": 11.99
+  },
+  {
+    "word": "Vous",
+    "start": 12.53,
+    "end": 12.63
+  },
+  {
+    "word": "êtes",
+    "start": 12.63,
+    "end": 12.71
+  },
+  {
+    "word": "d",
+    "start": 12.71,
+    "end": 12.83
+  },
+  {
+    "word": "'accord",
+    "start": 12.83,
+    "end": 12.91
+  },
+  {
+    "word": "qu",
+    "start": 12.91,
+    "end": 13.07
+  },
+  {
+    "word": "'on",
+    "start": 13.07,
+    "end": 13.09
+  },
+  {
+    "word": "fasse",
+    "start": 13.09,
+    "end": 13.23
+  },
+  {
+    "word": "l",
+    "start": 13.23,
+    "end": 13.37
+  },
+  {
+    "word": "'autre",
+    "start": 13.37,
+    "end": 13.41
+  },
+  {
+    "word": "côté,",
+    "start": 13.41,
+    "end": 13.69
+  },
+  {
+    "word": "allez,",
+    "start": 14.37,
+    "end": 14.75
+  },
+  {
+    "word": "je",
+    "start": 14.87,
+    "end": 14.87
+  },
+  {
+    "word": "passe",
+    "start": 14.87,
+    "end": 14.97
+  },
+  {
+    "word": "de",
+    "start": 14.97,
+    "end": 15.11
+  },
+  {
+    "word": "l",
+    "start": 15.11,
+    "end": 15.17
+  },
+  {
+    "word": "'autre",
+    "start": 15.17,
+    "end": 15.19
+  },
+  {
+    "word": "côté,",
+    "start": 15.19,
+    "end": 15.57
+  },
+  {
+    "word": "on",
+    "start": 16.35,
+    "end": 16.47
+  },
+  {
+    "word": "teste",
+    "start": 16.47,
+    "end": 16.59
+  },
+  {
+    "word": "les",
+    "start": 16.59,
+    "end": 16.77
+  },
+  {
+    "word": "poules",
+    "start": 16.77,
+    "end": 16.91
+  },
+  {
+    "word": "droite,",
+    "start": 16.91,
+    "end": 17.19
+  },
+  {
+    "word": "je",
+    "start": 18.25,
+    "end": 18.41
+  },
+  {
+    "word": "vais",
+    "start": 18.41,
+    "end": 18.45
+  },
+  {
+    "word": "vous",
+    "start": 18.45,
+    "end": 18.55
+  },
+  {
+    "word": "penser",
+    "start": 18.55,
+    "end": 18.71
+  },
+  {
+    "word": "la",
+    "start": 18.71,
+    "end": 18.93
+  },
+  {
+    "word": "peau,",
+    "start": 18.93,
+    "end": 19.29
+  },
+  {
+    "word": "c",
+    "start": 19.55,
+    "end": 19.73
+  },
+  {
+    "word": "'est",
+    "start": 19.73,
+    "end": 19.77
+  },
+  {
+    "word": "parti.",
+    "start": 19.77,
+    "end": 20.03
+  }
+]

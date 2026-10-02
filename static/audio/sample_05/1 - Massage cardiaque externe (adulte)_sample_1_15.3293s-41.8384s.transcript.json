@@ -1,0 +1,532 @@
+[
+  {
+    "word": "Le",
+    "start": 0.0,
+    "end": 0.28
+  },
+  {
+    "word": "toit",
+    "start": 0.28,
+    "end": 0.44
+  },
+  {
+    "word": "que",
+    "start": 0.44,
+    "end": 0.56
+  },
+  {
+    "word": "ce",
+    "start": 0.56,
+    "end": 0.68
+  },
+  {
+    "word": "ne",
+    "start": 0.68,
+    "end": 0.78
+  },
+  {
+    "word": "se",
+    "start": 0.78,
+    "end": 0.86
+  },
+  {
+    "word": "soulève",
+    "start": 0.86,
+    "end": 0.92
+  },
+  {
+    "word": "pas,",
+    "start": 0.92,
+    "end": 1.18
+  },
+  {
+    "word": "il",
+    "start": 1.7,
+    "end": 2.02
+  },
+  {
+    "word": "en",
+    "start": 2.02,
+    "end": 2.12
+  },
+  {
+    "word": "a",
+    "start": 2.12,
+    "end": 2.22
+  },
+  {
+    "word": "récardiaque,",
+    "start": 2.22,
+    "end": 2.78
+  },
+  {
+    "word": "il",
+    "start": 2.9,
+    "end": 2.94
+  },
+  {
+    "word": "est",
+    "start": 2.94,
+    "end": 3.04
+  },
+  {
+    "word": "très",
+    "start": 3.04,
+    "end": 3.26
+  },
+  {
+    "word": "heure,",
+    "start": 3.26,
+    "end": 3.54
+  },
+  {
+    "word": "je",
+    "start": 4.26,
+    "end": 4.46
+  },
+  {
+    "word": "commence",
+    "start": 4.46,
+    "end": 4.68
+  },
+  {
+    "word": "à",
+    "start": 4.68,
+    "end": 4.92
+  },
+  {
+    "word": "masser,",
+    "start": 4.92,
+    "end": 5.16
+  },
+  {
+    "word": "il",
+    "start": 5.34,
+    "end": 5.34
+  },
+  {
+    "word": "faudrait",
+    "start": 5.34,
+    "end": 5.58
+  },
+  {
+    "word": "qu",
+    "start": 5.58,
+    "end": 5.72
+  },
+  {
+    "word": "'on",
+    "start": 5.72,
+    "end": 5.78
+  },
+  {
+    "word": "aille",
+    "start": 5.78,
+    "end": 5.9
+  },
+  {
+    "word": "me",
+    "start": 5.9,
+    "end": 5.98
+  },
+  {
+    "word": "chercher",
+    "start": 5.98,
+    "end": 6.16
+  },
+  {
+    "word": "de",
+    "start": 6.16,
+    "end": 6.4
+  },
+  {
+    "word": "l",
+    "start": 6.4,
+    "end": 6.5
+  },
+  {
+    "word": "'aide,",
+    "start": 6.5,
+    "end": 6.54
+  },
+  {
+    "word": "s",
+    "start": 6.7,
+    "end": 6.72
+  },
+  {
+    "word": "'il",
+    "start": 6.72,
+    "end": 6.74
+  },
+  {
+    "word": "vous",
+    "start": 6.74,
+    "end": 6.88
+  },
+  {
+    "word": "plaît,",
+    "start": 6.88,
+    "end": 7.14
+  },
+  {
+    "word": "je",
+    "start": 7.46,
+    "end": 7.58
+  },
+  {
+    "word": "donne",
+    "start": 7.58,
+    "end": 7.68
+  },
+  {
+    "word": "quelqu",
+    "start": 7.68,
+    "end": 7.94
+  },
+  {
+    "word": "'un",
+    "start": 7.94,
+    "end": 8.06
+  },
+  {
+    "word": "pour",
+    "start": 8.06,
+    "end": 8.22
+  },
+  {
+    "word": "un",
+    "start": 8.22,
+    "end": 8.36
+  },
+  {
+    "word": "relais,",
+    "start": 8.36,
+    "end": 8.7
+  },
+  {
+    "word": "j",
+    "start": 9.18,
+    "end": 9.5
+  },
+  {
+    "word": "'ai",
+    "start": 9.5,
+    "end": 9.54
+  },
+  {
+    "word": "besoin",
+    "start": 9.54,
+    "end": 9.68
+  },
+  {
+    "word": "de",
+    "start": 9.68,
+    "end": 9.78
+  },
+  {
+    "word": "quelqu",
+    "start": 9.78,
+    "end": 9.96
+  },
+  {
+    "word": "'un",
+    "start": 9.96,
+    "end": 10.08
+  },
+  {
+    "word": "pour",
+    "start": 10.08,
+    "end": 10.22
+  },
+  {
+    "word": "aller",
+    "start": 10.22,
+    "end": 10.26
+  },
+  {
+    "word": "chercher",
+    "start": 10.26,
+    "end": 10.44
+  },
+  {
+    "word": "le",
+    "start": 10.44,
+    "end": 10.6
+  },
+  {
+    "word": "défilé",
+    "start": 10.6,
+    "end": 10.88
+  },
+  {
+    "word": "à",
+    "start": 10.88,
+    "end": 10.96
+  },
+  {
+    "word": "terre",
+    "start": 10.96,
+    "end": 11.1
+  },
+  {
+    "word": "ce",
+    "start": 11.1,
+    "end": 11.26
+  },
+  {
+    "word": "mieux",
+    "start": 11.26,
+    "end": 11.38
+  },
+  {
+    "word": "automatique",
+    "start": 11.38,
+    "end": 11.8
+  },
+  {
+    "word": "et",
+    "start": 11.8,
+    "end": 12.76
+  },
+  {
+    "word": "j",
+    "start": 12.76,
+    "end": 12.86
+  },
+  {
+    "word": "'ai",
+    "start": 12.86,
+    "end": 12.86
+  },
+  {
+    "word": "besoin",
+    "start": 12.86,
+    "end": 12.98
+  },
+  {
+    "word": "de",
+    "start": 12.98,
+    "end": 13.04
+  },
+  {
+    "word": "quelqu",
+    "start": 13.04,
+    "end": 13.24
+  },
+  {
+    "word": "'un",
+    "start": 13.24,
+    "end": 13.36
+  },
+  {
+    "word": "pour",
+    "start": 13.36,
+    "end": 13.5
+  },
+  {
+    "word": "appeler",
+    "start": 13.5,
+    "end": 13.72
+  },
+  {
+    "word": "le",
+    "start": 13.72,
+    "end": 13.8
+  },
+  {
+    "word": "15,",
+    "start": 13.8,
+    "end": 14.12
+  },
+  {
+    "word": "je",
+    "start": 15.16,
+    "end": 15.34
+  },
+  {
+    "word": "suis",
+    "start": 15.34,
+    "end": 15.42
+  },
+  {
+    "word": "en",
+    "start": 15.42,
+    "end": 15.42
+  },
+  {
+    "word": "train",
+    "start": 15.42,
+    "end": 15.52
+  },
+  {
+    "word": "de",
+    "start": 15.52,
+    "end": 15.62
+  },
+  {
+    "word": "masser",
+    "start": 15.62,
+    "end": 15.82
+  },
+  {
+    "word": "sur",
+    "start": 15.82,
+    "end": 16.02
+  },
+  {
+    "word": "le",
+    "start": 16.02,
+    "end": 16.1
+  },
+  {
+    "word": "plan",
+    "start": 16.1,
+    "end": 16.18
+  },
+  {
+    "word": "dure,",
+    "start": 16.18,
+    "end": 16.46
+  },
+  {
+    "word": "entre",
+    "start": 17.08,
+    "end": 17.26
+  },
+  {
+    "word": "100",
+    "start": 17.26,
+    "end": 17.44
+  },
+  {
+    "word": "et",
+    "start": 17.44,
+    "end": 17.56
+  },
+  {
+    "word": "100",
+    "start": 17.56,
+    "end": 17.68
+  },
+  {
+    "word": "battements",
+    "start": 17.68,
+    "end": 18.0
+  },
+  {
+    "word": "par",
+    "start": 18.0,
+    "end": 18.18
+  },
+  {
+    "word": "minute,",
+    "start": 18.18,
+    "end": 18.42
+  },
+  {
+    "word": "avec",
+    "start": 18.84,
+    "end": 18.98
+  },
+  {
+    "word": "une",
+    "start": 18.98,
+    "end": 19.12
+  },
+  {
+    "word": "profondeur",
+    "start": 19.12,
+    "end": 19.52
+  },
+  {
+    "word": "de",
+    "start": 19.52,
+    "end": 19.62
+  },
+  {
+    "word": "5",
+    "start": 19.62,
+    "end": 19.82
+  },
+  {
+    "word": "à",
+    "start": 19.82,
+    "end": 19.92
+  },
+  {
+    "word": "6",
+    "start": 19.92,
+    "end": 20.08
+  },
+  {
+    "word": "cm,",
+    "start": 20.08,
+    "end": 20.56
+  },
+  {
+    "word": "au",
+    "start": 21.28,
+    "end": 21.38
+  },
+  {
+    "word": "tir",
+    "start": 21.38,
+    "end": 21.52
+  },
+  {
+    "word": "inférieur",
+    "start": 21.52,
+    "end": 21.82
+  },
+  {
+    "word": "du",
+    "start": 21.82,
+    "end": 22.06
+  },
+  {
+    "word": "sternum,",
+    "start": 22.06,
+    "end": 22.42
+  },
+  {
+    "word": "j",
+    "start": 22.9,
+    "end": 24.26
+  },
+  {
+    "word": "'aurais",
+    "start": 24.26,
+    "end": 24.34
+  },
+  {
+    "word": "besoin",
+    "start": 24.34,
+    "end": 24.46
+  },
+  {
+    "word": "d",
+    "start": 24.46,
+    "end": 24.66
+  },
+  {
+    "word": "'un",
+    "start": 24.66,
+    "end": 24.66
+  },
+  {
+    "word": "relais",
+    "start": 24.66,
+    "end": 24.88
+  },
+  {
+    "word": "assez",
+    "start": 24.88,
+    "end": 25.04
+  },
+  {
+    "word": "rapidement.",
+    "start": 25.04,
+    "end": 25.44
+  }
+]

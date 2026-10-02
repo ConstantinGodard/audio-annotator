@@ -1,0 +1,337 @@
+[
+  {
+    "word": "C",
+    "start": 0.27,
+    "end": 0.71
+  },
+  {
+    "word": "'était",
+    "start": 0.71,
+    "end": 0.79
+  },
+  {
+    "word": "à",
+    "start": 0.79,
+    "end": 0.87
+  },
+  {
+    "word": "peu",
+    "start": 0.87,
+    "end": 0.93
+  },
+  {
+    "word": "près",
+    "start": 0.93,
+    "end": 1.07
+  },
+  {
+    "word": "pareil",
+    "start": 1.07,
+    "end": 1.31
+  },
+  {
+    "word": "des",
+    "start": 1.31,
+    "end": 1.43
+  },
+  {
+    "word": "deux",
+    "start": 1.43,
+    "end": 1.57
+  },
+  {
+    "word": "côtés,",
+    "start": 1.57,
+    "end": 2.03
+  },
+  {
+    "word": "très",
+    "start": 2.57,
+    "end": 2.83
+  },
+  {
+    "word": "bien.",
+    "start": 2.83,
+    "end": 3.03
+  },
+  {
+    "word": "Donc",
+    "start": 3.61,
+    "end": 3.63
+  },
+  {
+    "word": "là,",
+    "start": 3.63,
+    "end": 3.75
+  },
+  {
+    "word": "j",
+    "start": 3.77,
+    "end": 3.85
+  },
+  {
+    "word": "'ai",
+    "start": 3.85,
+    "end": 3.85
+  },
+  {
+    "word": "l",
+    "start": 3.85,
+    "end": 3.89
+  },
+  {
+    "word": "'impression",
+    "start": 3.89,
+    "end": 4.09
+  },
+  {
+    "word": "que",
+    "start": 4.09,
+    "end": 4.31
+  },
+  {
+    "word": "la",
+    "start": 4.31,
+    "end": 4.39
+  },
+  {
+    "word": "réaction",
+    "start": 4.39,
+    "end": 4.71
+  },
+  {
+    "word": "au",
+    "start": 4.71,
+    "end": 4.81
+  },
+  {
+    "word": "stimulus",
+    "start": 4.81,
+    "end": 5.07
+  },
+  {
+    "word": "douloureux",
+    "start": 5.07,
+    "end": 5.89
+  },
+  {
+    "word": "est",
+    "start": 5.89,
+    "end": 6.07
+  },
+  {
+    "word": "pareil",
+    "start": 6.07,
+    "end": 6.39
+  },
+  {
+    "word": "à",
+    "start": 6.39,
+    "end": 6.59
+  },
+  {
+    "word": "droite",
+    "start": 6.59,
+    "end": 6.77
+  },
+  {
+    "word": "et",
+    "start": 6.77,
+    "end": 7.25
+  },
+  {
+    "word": "à",
+    "start": 7.25,
+    "end": 7.35
+  },
+  {
+    "word": "gauche,",
+    "start": 7.35,
+    "end": 7.73
+  },
+  {
+    "word": "donc",
+    "start": 8.11,
+    "end": 8.15
+  },
+  {
+    "word": "ce",
+    "start": 8.15,
+    "end": 8.27
+  },
+  {
+    "word": "qui",
+    "start": 8.27,
+    "end": 8.31
+  },
+  {
+    "word": "est",
+    "start": 8.31,
+    "end": 8.35
+  },
+  {
+    "word": "plutôt",
+    "start": 8.35,
+    "end": 8.57
+  },
+  {
+    "word": "rassurant.",
+    "start": 8.57,
+    "end": 9.05
+  },
+  {
+    "word": "On",
+    "start": 9.43,
+    "end": 9.61
+  },
+  {
+    "word": "va",
+    "start": 9.61,
+    "end": 9.69
+  },
+  {
+    "word": "quand",
+    "start": 9.69,
+    "end": 9.85
+  },
+  {
+    "word": "même",
+    "start": 9.85,
+    "end": 9.95
+  },
+  {
+    "word": "continuer",
+    "start": 9.95,
+    "end": 10.45
+  },
+  {
+    "word": "les",
+    "start": 10.45,
+    "end": 11.01
+  },
+  {
+    "word": "explorations,",
+    "start": 11.01,
+    "end": 11.53
+  },
+  {
+    "word": "donc",
+    "start": 11.61,
+    "end": 11.67
+  },
+  {
+    "word": "on",
+    "start": 11.67,
+    "end": 11.71
+  },
+  {
+    "word": "va",
+    "start": 11.71,
+    "end": 11.77
+  },
+  {
+    "word": "faire",
+    "start": 11.77,
+    "end": 11.89
+  },
+  {
+    "word": "un",
+    "start": 11.89,
+    "end": 12.05
+  },
+  {
+    "word": "scanner",
+    "start": 12.05,
+    "end": 12.31
+  },
+  {
+    "word": "cérébral.",
+    "start": 12.31,
+    "end": 12.89
+  },
+  {
+    "word": "Et",
+    "start": 13.51,
+    "end": 13.59
+  },
+  {
+    "word": "est",
+    "start": 13.59,
+    "end": 14.13
+  },
+  {
+    "word": "-ce",
+    "start": 14.13,
+    "end": 14.19
+  },
+  {
+    "word": "que",
+    "start": 14.19,
+    "end": 14.25
+  },
+  {
+    "word": "vous",
+    "start": 14.25,
+    "end": 14.33
+  },
+  {
+    "word": "avez",
+    "start": 14.33,
+    "end": 14.49
+  },
+  {
+    "word": "d",
+    "start": 14.49,
+    "end": 14.65
+  },
+  {
+    "word": "'autres",
+    "start": 14.65,
+    "end": 14.75
+  },
+  {
+    "word": "questions",
+    "start": 14.75,
+    "end": 15.19
+  },
+  {
+    "word": "?",
+    "start": 15.19,
+    "end": 15.63
+  },
+  {
+    "word": "Non,",
+    "start": 15.63,
+    "end": 15.91
+  },
+  {
+    "word": "parfait.",
+    "start": 16.19,
+    "end": 16.57
+  },
+  {
+    "word": "Donc",
+    "start": 16.87,
+    "end": 16.91
+  },
+  {
+    "word": "moi,",
+    "start": 16.91,
+    "end": 17.05
+  },
+  {
+    "word": "j",
+    "start": 17.13,
+    "end": 17.15
+  },
+  {
+    "word": "'ai",
+    "start": 17.15,
+    "end": 17.17
+  },
+  {
+    "word": "terminé.",
+    "start": 17.17,
+    "end": 17.55
+  }
+]

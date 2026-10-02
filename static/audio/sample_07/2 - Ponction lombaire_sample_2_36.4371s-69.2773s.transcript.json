@@ -1,0 +1,557 @@
+[
+  {
+    "word": "Juste",
+    "start": 0.75,
+    "end": 1.45
+  },
+  {
+    "word": "une",
+    "start": 1.45,
+    "end": 1.57
+  },
+  {
+    "word": "petite",
+    "start": 1.57,
+    "end": 1.77
+  },
+  {
+    "word": "chose,",
+    "start": 1.77,
+    "end": 2.09
+  },
+  {
+    "word": "vous",
+    "start": 2.43,
+    "end": 3.09
+  },
+  {
+    "word": "n",
+    "start": 3.09,
+    "end": 3.23
+  },
+  {
+    "word": "'avez",
+    "start": 3.23,
+    "end": 3.29
+  },
+  {
+    "word": "pas",
+    "start": 3.29,
+    "end": 3.47
+  },
+  {
+    "word": "de",
+    "start": 3.47,
+    "end": 3.55
+  },
+  {
+    "word": "problème",
+    "start": 3.55,
+    "end": 3.73
+  },
+  {
+    "word": "de",
+    "start": 3.73,
+    "end": 3.91
+  },
+  {
+    "word": "coagulation,",
+    "start": 3.91,
+    "end": 4.55
+  },
+  {
+    "word": "vous",
+    "start": 5.01,
+    "end": 5.05
+  },
+  {
+    "word": "n",
+    "start": 5.05,
+    "end": 5.21
+  },
+  {
+    "word": "'avez",
+    "start": 5.21,
+    "end": 5.31
+  },
+  {
+    "word": "pas",
+    "start": 5.31,
+    "end": 5.53
+  },
+  {
+    "word": "de",
+    "start": 5.53,
+    "end": 5.75
+  },
+  {
+    "word": "trombopénie,",
+    "start": 5.75,
+    "end": 6.65
+  },
+  {
+    "word": "vous",
+    "start": 6.99,
+    "end": 7.03
+  },
+  {
+    "word": "n",
+    "start": 7.03,
+    "end": 7.17
+  },
+  {
+    "word": "'avez",
+    "start": 7.17,
+    "end": 7.25
+  },
+  {
+    "word": "pas",
+    "start": 7.25,
+    "end": 7.41
+  },
+  {
+    "word": "de",
+    "start": 7.41,
+    "end": 7.53
+  },
+  {
+    "word": "choses",
+    "start": 7.53,
+    "end": 7.63
+  },
+  {
+    "word": "de",
+    "start": 7.63,
+    "end": 7.85
+  },
+  {
+    "word": "traitement",
+    "start": 7.85,
+    "end": 8.17
+  },
+  {
+    "word": "anti",
+    "start": 8.17,
+    "end": 8.39
+  },
+  {
+    "word": "-coagulant",
+    "start": 8.39,
+    "end": 8.77
+  },
+  {
+    "word": "?",
+    "start": 8.77,
+    "end": 9.59
+  },
+  {
+    "word": "Non,",
+    "start": 9.59,
+    "end": 9.85
+  },
+  {
+    "word": "super.",
+    "start": 10.09,
+    "end": 10.31
+  },
+  {
+    "word": "Couter",
+    "start": 11.15,
+    "end": 11.33
+  },
+  {
+    "word": "les",
+    "start": 11.33,
+    "end": 11.73
+  },
+  {
+    "word": "risques",
+    "start": 11.73,
+    "end": 12.27
+  },
+  {
+    "word": "du",
+    "start": 12.27,
+    "end": 12.43
+  },
+  {
+    "word": "geste",
+    "start": 12.43,
+    "end": 12.65
+  },
+  {
+    "word": "qui",
+    "start": 12.65,
+    "end": 12.75
+  },
+  {
+    "word": "sont",
+    "start": 12.75,
+    "end": 12.87
+  },
+  {
+    "word": "simples,",
+    "start": 12.87,
+    "end": 13.17
+  },
+  {
+    "word": "c",
+    "start": 13.25,
+    "end": 13.47
+  },
+  {
+    "word": "'est",
+    "start": 13.47,
+    "end": 13.61
+  },
+  {
+    "word": "une",
+    "start": 13.61,
+    "end": 14.17
+  },
+  {
+    "word": "douleur",
+    "start": 14.17,
+    "end": 14.47
+  },
+  {
+    "word": "au",
+    "start": 14.47,
+    "end": 14.55
+  },
+  {
+    "word": "point",
+    "start": 14.55,
+    "end": 14.67
+  },
+  {
+    "word": "de",
+    "start": 14.67,
+    "end": 14.83
+  },
+  {
+    "word": "fonction.",
+    "start": 14.83,
+    "end": 15.05
+  },
+  {
+    "word": "Ensuite,",
+    "start": 16.41,
+    "end": 16.77
+  },
+  {
+    "word": "c",
+    "start": 17.07,
+    "end": 17.07
+  },
+  {
+    "word": "'est",
+    "start": 17.07,
+    "end": 17.29
+  },
+  {
+    "word": "le",
+    "start": 17.29,
+    "end": 17.75
+  },
+  {
+    "word": "fait",
+    "start": 17.75,
+    "end": 17.89
+  },
+  {
+    "word": "d",
+    "start": 17.89,
+    "end": 18.03
+  },
+  {
+    "word": "'avoir",
+    "start": 18.03,
+    "end": 18.09
+  },
+  {
+    "word": "un",
+    "start": 18.09,
+    "end": 18.25
+  },
+  {
+    "word": "syndrome",
+    "start": 18.25,
+    "end": 18.47
+  },
+  {
+    "word": "de",
+    "start": 18.47,
+    "end": 18.73
+  },
+  {
+    "word": "post",
+    "start": 18.73,
+    "end": 18.77
+  },
+  {
+    "word": "-ponction",
+    "start": 18.77,
+    "end": 19.03
+  },
+  {
+    "word": "lombaire,",
+    "start": 19.03,
+    "end": 19.35
+  },
+  {
+    "word": "c",
+    "start": 19.37,
+    "end": 19.49
+  },
+  {
+    "word": "'est",
+    "start": 19.49,
+    "end": 19.51
+  },
+  {
+    "word": "le",
+    "start": 19.51,
+    "end": 19.53
+  },
+  {
+    "word": "fait",
+    "start": 19.53,
+    "end": 19.61
+  },
+  {
+    "word": "d",
+    "start": 19.61,
+    "end": 19.73
+  },
+  {
+    "word": "'avoir",
+    "start": 19.73,
+    "end": 19.85
+  },
+  {
+    "word": "mal",
+    "start": 19.85,
+    "end": 20.13
+  },
+  {
+    "word": "à",
+    "start": 20.13,
+    "end": 20.25
+  },
+  {
+    "word": "la",
+    "start": 20.25,
+    "end": 20.35
+  },
+  {
+    "word": "tête,",
+    "start": 20.35,
+    "end": 20.71
+  },
+  {
+    "word": "et",
+    "start": 21.07,
+    "end": 21.15
+  },
+  {
+    "word": "il",
+    "start": 21.15,
+    "end": 21.25
+  },
+  {
+    "word": "y",
+    "start": 21.25,
+    "end": 21.27
+  },
+  {
+    "word": "a",
+    "start": 21.27,
+    "end": 21.27
+  },
+  {
+    "word": "les",
+    "start": 21.27,
+    "end": 21.39
+  },
+  {
+    "word": "rarissimes",
+    "start": 21.39,
+    "end": 21.97
+  },
+  {
+    "word": "et",
+    "start": 21.97,
+    "end": 22.21
+  },
+  {
+    "word": "matômes",
+    "start": 22.21,
+    "end": 22.73
+  },
+  {
+    "word": "au",
+    "start": 22.73,
+    "end": 22.91
+  },
+  {
+    "word": "niveau",
+    "start": 22.91,
+    "end": 23.17
+  },
+  {
+    "word": "de",
+    "start": 23.17,
+    "end": 24.39
+  },
+  {
+    "word": "rachis.",
+    "start": 24.39,
+    "end": 25.27
+  },
+  {
+    "word": "Notre",
+    "start": 25.61,
+    "end": 25.87
+  },
+  {
+    "word": "affier",
+    "start": 25.87,
+    "end": 26.05
+  },
+  {
+    "word": "-même",
+    "start": 26.05,
+    "end": 26.21
+  },
+  {
+    "word": "vous",
+    "start": 26.21,
+    "end": 26.39
+  },
+  {
+    "word": "piquez",
+    "start": 26.39,
+    "end": 26.71
+  },
+  {
+    "word": "une",
+    "start": 26.71,
+    "end": 26.89
+  },
+  {
+    "word": "glissémie",
+    "start": 26.89,
+    "end": 27.31
+  },
+  {
+    "word": "parce",
+    "start": 27.31,
+    "end": 27.57
+  },
+  {
+    "word": "qu",
+    "start": 27.57,
+    "end": 27.71
+  },
+  {
+    "word": "'on",
+    "start": 27.71,
+    "end": 27.73
+  },
+  {
+    "word": "a",
+    "start": 27.73,
+    "end": 27.81
+  },
+  {
+    "word": "besoin",
+    "start": 27.81,
+    "end": 27.99
+  },
+  {
+    "word": "d",
+    "start": 27.99,
+    "end": 28.17
+  },
+  {
+    "word": "'une",
+    "start": 28.17,
+    "end": 28.23
+  },
+  {
+    "word": "glissémie",
+    "start": 28.23,
+    "end": 29.17
+  },
+  {
+    "word": "en",
+    "start": 29.17,
+    "end": 29.29
+  },
+  {
+    "word": "même",
+    "start": 29.29,
+    "end": 29.41
+  },
+  {
+    "word": "temps",
+    "start": 29.41,
+    "end": 29.59
+  },
+  {
+    "word": "du",
+    "start": 29.59,
+    "end": 29.71
+  },
+  {
+    "word": "geste",
+    "start": 29.71,
+    "end": 29.97
+  },
+  {
+    "word": "pour",
+    "start": 29.97,
+    "end": 30.07
+  },
+  {
+    "word": "pouvoir",
+    "start": 30.07,
+    "end": 30.23
+  },
+  {
+    "word": "bien",
+    "start": 30.23,
+    "end": 30.47
+  },
+  {
+    "word": "analyser",
+    "start": 30.47,
+    "end": 30.97
+  },
+  {
+    "word": "la",
+    "start": 30.97,
+    "end": 31.09
+  },
+  {
+    "word": "glissémie",
+    "start": 31.09,
+    "end": 31.47
+  },
+  {
+    "word": "dans",
+    "start": 31.47,
+    "end": 31.63
+  },
+  {
+    "word": "votre",
+    "start": 31.63,
+    "end": 31.81
+  },
+  {
+    "word": "rachis.",
+    "start": 31.81,
+    "end": 32.27
+  }
+]

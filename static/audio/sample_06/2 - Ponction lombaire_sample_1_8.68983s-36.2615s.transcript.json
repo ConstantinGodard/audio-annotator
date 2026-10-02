@@ -1,0 +1,502 @@
+[
+  {
+    "word": "Bonjour",
+    "start": 1.66,
+    "end": 1.98
+  },
+  {
+    "word": "Monsieur",
+    "start": 1.98,
+    "end": 2.3
+  },
+  {
+    "word": "Dr.",
+    "start": 2.3,
+    "end": 2.74
+  },
+  {
+    "word": "Vachron,",
+    "start": 3.0,
+    "end": 3.32
+  },
+  {
+    "word": "vous",
+    "start": 4.04,
+    "end": 4.3
+  },
+  {
+    "word": "pouvez",
+    "start": 4.3,
+    "end": 4.56
+  },
+  {
+    "word": "me",
+    "start": 4.56,
+    "end": 4.64
+  },
+  {
+    "word": "rappeler",
+    "start": 4.64,
+    "end": 4.86
+  },
+  {
+    "word": "votre",
+    "start": 4.86,
+    "end": 5.06
+  },
+  {
+    "word": "identité,",
+    "start": 5.06,
+    "end": 5.54
+  },
+  {
+    "word": "s",
+    "start": 5.74,
+    "end": 5.78
+  },
+  {
+    "word": "'il",
+    "start": 5.78,
+    "end": 5.78
+  },
+  {
+    "word": "vous",
+    "start": 5.78,
+    "end": 5.92
+  },
+  {
+    "word": "plaît",
+    "start": 5.92,
+    "end": 6.04
+  },
+  {
+    "word": "ainsi",
+    "start": 6.04,
+    "end": 6.24
+  },
+  {
+    "word": "que",
+    "start": 6.24,
+    "end": 6.3
+  },
+  {
+    "word": "votre",
+    "start": 6.3,
+    "end": 6.5
+  },
+  {
+    "word": "date",
+    "start": 6.5,
+    "end": 6.62
+  },
+  {
+    "word": "de",
+    "start": 6.62,
+    "end": 6.78
+  },
+  {
+    "word": "naissance.",
+    "start": 6.78,
+    "end": 7.14
+  },
+  {
+    "word": "Parfait,",
+    "start": 8.54,
+    "end": 8.86
+  },
+  {
+    "word": "Monsieur",
+    "start": 8.94,
+    "end": 9.08
+  },
+  {
+    "word": "Martin.",
+    "start": 9.08,
+    "end": 9.3
+  },
+  {
+    "word": "Monsieur",
+    "start": 10.46,
+    "end": 10.78
+  },
+  {
+    "word": "Martin,",
+    "start": 10.78,
+    "end": 11.06
+  },
+  {
+    "word": "on",
+    "start": 11.18,
+    "end": 11.18
+  },
+  {
+    "word": "est",
+    "start": 11.18,
+    "end": 11.26
+  },
+  {
+    "word": "là",
+    "start": 11.26,
+    "end": 11.34
+  },
+  {
+    "word": "pour",
+    "start": 11.34,
+    "end": 11.46
+  },
+  {
+    "word": "vous",
+    "start": 11.46,
+    "end": 11.58
+  },
+  {
+    "word": "faire",
+    "start": 11.58,
+    "end": 11.66
+  },
+  {
+    "word": "votre",
+    "start": 11.66,
+    "end": 11.94
+  },
+  {
+    "word": "fonction",
+    "start": 11.94,
+    "end": 12.22
+  },
+  {
+    "word": "lombaire,",
+    "start": 12.22,
+    "end": 12.68
+  },
+  {
+    "word": "je",
+    "start": 12.76,
+    "end": 12.8
+  },
+  {
+    "word": "vois",
+    "start": 12.8,
+    "end": 12.9
+  },
+  {
+    "word": "que",
+    "start": 12.9,
+    "end": 12.92
+  },
+  {
+    "word": "votre",
+    "start": 12.92,
+    "end": 13.18
+  },
+  {
+    "word": "dos",
+    "start": 13.18,
+    "end": 13.3
+  },
+  {
+    "word": "est",
+    "start": 13.3,
+    "end": 13.42
+  },
+  {
+    "word": "déjà",
+    "start": 13.42,
+    "end": 13.64
+  },
+  {
+    "word": "bétonné",
+    "start": 13.64,
+    "end": 14.12
+  },
+  {
+    "word": "d",
+    "start": 14.12,
+    "end": 14.52
+  },
+  {
+    "word": "'iné.",
+    "start": 14.52,
+    "end": 14.7
+  },
+  {
+    "word": "On",
+    "start": 15.12,
+    "end": 15.38
+  },
+  {
+    "word": "va",
+    "start": 15.38,
+    "end": 15.46
+  },
+  {
+    "word": "juste",
+    "start": 15.46,
+    "end": 15.56
+  },
+  {
+    "word": "récapituer",
+    "start": 15.56,
+    "end": 16.14
+  },
+  {
+    "word": "rapidement,",
+    "start": 16.14,
+    "end": 16.56
+  },
+  {
+    "word": "vous",
+    "start": 16.74,
+    "end": 16.84
+  },
+  {
+    "word": "avez",
+    "start": 16.84,
+    "end": 17.0
+  },
+  {
+    "word": "mal",
+    "start": 17.0,
+    "end": 17.2
+  },
+  {
+    "word": "à",
+    "start": 17.2,
+    "end": 17.3
+  },
+  {
+    "word": "la",
+    "start": 17.3,
+    "end": 17.46
+  },
+  {
+    "word": "tête,",
+    "start": 17.46,
+    "end": 17.58
+  },
+  {
+    "word": "on",
+    "start": 17.68,
+    "end": 17.76
+  },
+  {
+    "word": "va",
+    "start": 17.76,
+    "end": 17.82
+  },
+  {
+    "word": "essayer",
+    "start": 17.82,
+    "end": 17.96
+  },
+  {
+    "word": "de",
+    "start": 17.96,
+    "end": 18.02
+  },
+  {
+    "word": "chercher,",
+    "start": 18.02,
+    "end": 18.26
+  },
+  {
+    "word": "vous",
+    "start": 18.34,
+    "end": 18.42
+  },
+  {
+    "word": "n",
+    "start": 18.42,
+    "end": 18.5
+  },
+  {
+    "word": "'avez",
+    "start": 18.5,
+    "end": 18.5
+  },
+  {
+    "word": "pas",
+    "start": 18.5,
+    "end": 18.64
+  },
+  {
+    "word": "une",
+    "start": 18.64,
+    "end": 18.76
+  },
+  {
+    "word": "infection",
+    "start": 18.76,
+    "end": 19.04
+  },
+  {
+    "word": "dans",
+    "start": 19.04,
+    "end": 19.42
+  },
+  {
+    "word": "le",
+    "start": 19.42,
+    "end": 19.54
+  },
+  {
+    "word": "liquide,",
+    "start": 19.54,
+    "end": 19.84
+  },
+  {
+    "word": "c",
+    "start": 19.9,
+    "end": 19.96
+  },
+  {
+    "word": "'est",
+    "start": 19.96,
+    "end": 20.0
+  },
+  {
+    "word": "le",
+    "start": 20.0,
+    "end": 20.1
+  },
+  {
+    "word": "falloir",
+    "start": 20.1,
+    "end": 20.26
+  },
+  {
+    "word": "chidien.",
+    "start": 20.26,
+    "end": 20.7
+  },
+  {
+    "word": "Glovalon,",
+    "start": 21.86,
+    "end": 22.18
+  },
+  {
+    "word": "ce",
+    "start": 22.18,
+    "end": 22.28
+  },
+  {
+    "word": "qu",
+    "start": 22.28,
+    "end": 22.36
+  },
+  {
+    "word": "'on",
+    "start": 22.36,
+    "end": 22.36
+  },
+  {
+    "word": "va",
+    "start": 22.36,
+    "end": 22.4
+  },
+  {
+    "word": "faire,",
+    "start": 22.4,
+    "end": 22.56
+  },
+  {
+    "word": "c",
+    "start": 22.72,
+    "end": 22.72
+  },
+  {
+    "word": "'est",
+    "start": 22.72,
+    "end": 22.84
+  },
+  {
+    "word": "une",
+    "start": 22.84,
+    "end": 23.34
+  },
+  {
+    "word": "petite",
+    "start": 23.34,
+    "end": 23.54
+  },
+  {
+    "word": "piqueur",
+    "start": 23.54,
+    "end": 23.86
+  },
+  {
+    "word": "entre",
+    "start": 23.86,
+    "end": 24.04
+  },
+  {
+    "word": "deux",
+    "start": 24.04,
+    "end": 24.22
+  },
+  {
+    "word": "vertèpes",
+    "start": 24.22,
+    "end": 24.62
+  },
+  {
+    "word": "pour",
+    "start": 24.62,
+    "end": 24.8
+  },
+  {
+    "word": "aller",
+    "start": 24.8,
+    "end": 24.96
+  },
+  {
+    "word": "prendre",
+    "start": 24.96,
+    "end": 25.24
+  },
+  {
+    "word": "un",
+    "start": 25.24,
+    "end": 25.4
+  },
+  {
+    "word": "peu",
+    "start": 25.4,
+    "end": 25.52
+  },
+  {
+    "word": "de",
+    "start": 25.52,
+    "end": 25.58
+  },
+  {
+    "word": "ce",
+    "start": 25.58,
+    "end": 25.7
+  },
+  {
+    "word": "liquide",
+    "start": 25.7,
+    "end": 26.2
+  },
+  {
+    "word": "et",
+    "start": 26.2,
+    "end": 26.44
+  },
+  {
+    "word": "aller",
+    "start": 26.44,
+    "end": 26.58
+  },
+  {
+    "word": "l",
+    "start": 26.58,
+    "end": 26.84
+  },
+  {
+    "word": "'analyser.",
+    "start": 26.84,
+    "end": 27.16
+  }
+]

@@ -1,0 +1,407 @@
+[
+  {
+    "word": "Bonjour",
+    "start": 0.62,
+    "end": 1.2
+  },
+  {
+    "word": "monsieur",
+    "start": 1.2,
+    "end": 1.5
+  },
+  {
+    "word": "le",
+    "start": 1.5,
+    "end": 1.9
+  },
+  {
+    "word": "docteur",
+    "start": 1.9,
+    "end": 2.16
+  },
+  {
+    "word": "fieu",
+    "start": 2.16,
+    "end": 2.34
+  },
+  {
+    "word": "c",
+    "start": 2.34,
+    "end": 2.58
+  },
+  {
+    "word": "'est",
+    "start": 2.58,
+    "end": 2.62
+  },
+  {
+    "word": "moi",
+    "start": 2.62,
+    "end": 2.72
+  },
+  {
+    "word": "qui",
+    "start": 2.72,
+    "end": 2.84
+  },
+  {
+    "word": "vais",
+    "start": 2.84,
+    "end": 2.92
+  },
+  {
+    "word": "m",
+    "start": 2.92,
+    "end": 2.98
+  },
+  {
+    "word": "'occuper",
+    "start": 2.98,
+    "end": 3.24
+  },
+  {
+    "word": "de",
+    "start": 3.24,
+    "end": 3.34
+  },
+  {
+    "word": "vous",
+    "start": 3.34,
+    "end": 3.54
+  },
+  {
+    "word": "donc",
+    "start": 3.54,
+    "end": 4.42
+  },
+  {
+    "word": "on",
+    "start": 4.42,
+    "end": 4.54
+  },
+  {
+    "word": "m",
+    "start": 4.54,
+    "end": 4.62
+  },
+  {
+    "word": "'a",
+    "start": 4.62,
+    "end": 4.62
+  },
+  {
+    "word": "dit",
+    "start": 4.62,
+    "end": 4.7
+  },
+  {
+    "word": "que",
+    "start": 4.7,
+    "end": 4.76
+  },
+  {
+    "word": "vous",
+    "start": 4.76,
+    "end": 4.84
+  },
+  {
+    "word": "avez",
+    "start": 4.84,
+    "end": 4.96
+  },
+  {
+    "word": "un",
+    "start": 4.96,
+    "end": 5.12
+  },
+  {
+    "word": "problème",
+    "start": 5.12,
+    "end": 5.26
+  },
+  {
+    "word": "de",
+    "start": 5.26,
+    "end": 5.4
+  },
+  {
+    "word": "sensibilité",
+    "start": 5.4,
+    "end": 6.16
+  },
+  {
+    "word": "au",
+    "start": 6.16,
+    "end": 6.78
+  },
+  {
+    "word": "niveau",
+    "start": 6.78,
+    "end": 6.96
+  },
+  {
+    "word": "des",
+    "start": 6.96,
+    "end": 7.18
+  },
+  {
+    "word": "membres",
+    "start": 7.18,
+    "end": 7.54
+  },
+  {
+    "word": "supereurs",
+    "start": 7.54,
+    "end": 7.98
+  },
+  {
+    "word": "donc",
+    "start": 7.98,
+    "end": 8.08
+  },
+  {
+    "word": "des",
+    "start": 8.08,
+    "end": 8.22
+  },
+  {
+    "word": "bras",
+    "start": 8.22,
+    "end": 8.44
+  },
+  {
+    "word": "on",
+    "start": 8.44,
+    "end": 9.26
+  },
+  {
+    "word": "va",
+    "start": 9.26,
+    "end": 9.36
+  },
+  {
+    "word": "devoir",
+    "start": 9.36,
+    "end": 9.5
+  },
+  {
+    "word": "réaliser",
+    "start": 9.5,
+    "end": 9.94
+  },
+  {
+    "word": "un",
+    "start": 9.94,
+    "end": 10.08
+  },
+  {
+    "word": "test",
+    "start": 10.08,
+    "end": 10.3
+  },
+  {
+    "word": "qui",
+    "start": 10.3,
+    "end": 10.5
+  },
+  {
+    "word": "s",
+    "start": 10.5,
+    "end": 10.6
+  },
+  {
+    "word": "'appelle",
+    "start": 10.6,
+    "end": 10.72
+  },
+  {
+    "word": "le",
+    "start": 10.72,
+    "end": 10.98
+  },
+  {
+    "word": "test",
+    "start": 10.98,
+    "end": 11.28
+  },
+  {
+    "word": "de",
+    "start": 11.28,
+    "end": 11.48
+  },
+  {
+    "word": "réaction",
+    "start": 11.48,
+    "end": 11.82
+  },
+  {
+    "word": "au",
+    "start": 11.82,
+    "end": 11.94
+  },
+  {
+    "word": "stimulus",
+    "start": 11.94,
+    "end": 12.16
+  },
+  {
+    "word": "douloureux",
+    "start": 12.16,
+    "end": 12.88
+  },
+  {
+    "word": "mais",
+    "start": 12.88,
+    "end": 13.34
+  },
+  {
+    "word": "avant",
+    "start": 13.34,
+    "end": 13.52
+  },
+  {
+    "word": "je",
+    "start": 13.52,
+    "end": 13.66
+  },
+  {
+    "word": "vais",
+    "start": 13.66,
+    "end": 13.72
+  },
+  {
+    "word": "vérifier",
+    "start": 13.72,
+    "end": 14.04
+  },
+  {
+    "word": "votre",
+    "start": 14.04,
+    "end": 14.24
+  },
+  {
+    "word": "identité",
+    "start": 14.24,
+    "end": 14.76
+  },
+  {
+    "word": "donc",
+    "start": 14.76,
+    "end": 15.4
+  },
+  {
+    "word": "vous",
+    "start": 15.4,
+    "end": 15.52
+  },
+  {
+    "word": "allez",
+    "start": 15.52,
+    "end": 15.58
+  },
+  {
+    "word": "donner",
+    "start": 15.58,
+    "end": 15.68
+  },
+  {
+    "word": "votre",
+    "start": 15.68,
+    "end": 16.06
+  },
+  {
+    "word": "nom",
+    "start": 16.06,
+    "end": 16.32
+  },
+  {
+    "word": "prénom",
+    "start": 16.32,
+    "end": 17.42
+  },
+  {
+    "word": "votre",
+    "start": 17.42,
+    "end": 18.16
+  },
+  {
+    "word": "date",
+    "start": 18.16,
+    "end": 18.34
+  },
+  {
+    "word": "de",
+    "start": 18.34,
+    "end": 18.48
+  },
+  {
+    "word": "naissance",
+    "start": 18.48,
+    "end": 19.02
+  },
+  {
+    "word": "très",
+    "start": 19.02,
+    "end": 19.7
+  },
+  {
+    "word": "bien",
+    "start": 19.7,
+    "end": 19.88
+  },
+  {
+    "word": "vous",
+    "start": 19.88,
+    "end": 20.04
+  },
+  {
+    "word": "allez",
+    "start": 20.04,
+    "end": 20.16
+  },
+  {
+    "word": "bien",
+    "start": 20.16,
+    "end": 20.3
+  },
+  {
+    "word": "monsieur",
+    "start": 20.3,
+    "end": 20.54
+  },
+  {
+    "word": "rv",
+    "start": 20.54,
+    "end": 21.04
+  },
+  {
+    "word": "matin",
+    "start": 21.04,
+    "end": 21.62
+  },
+  {
+    "word": "est",
+    "start": 21.62,
+    "end": 21.86
+  },
+  {
+    "word": "le",
+    "start": 21.86,
+    "end": 21.98
+  },
+  {
+    "word": "19",
+    "start": 21.98,
+    "end": 22.24
+  },
+  {
+    "word": "février",
+    "start": 22.24,
+    "end": 22.66
+  },
+  {
+    "word": "1984",
+    "start": 22.66,
+    "end": 23.16
+  }
+]
