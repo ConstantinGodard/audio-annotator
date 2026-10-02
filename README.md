@@ -28,6 +28,7 @@ For the demo in this repository, we used audio files extracted from the first 3 
    * 0 - Vidéo introductive
    * 1 - Massage cardiaque externe (adulte)
    * 2 - Ponction lombaire
+
 One can find the timestamp of each audio sample directly in their name, eg: 0 - Vidéo introductive_sample_1_56.5426s-80.5853s.wav => from second 56.5426 to second 80.5853.
 
 ### Feedback mechanisms
