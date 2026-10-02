@@ -21,7 +21,7 @@ The feature enabling the possibility to select a region in the rectangle was rem
 
 Example of usage:
 <kbd>
-![audio-annotator screenshot](https://github.com/CrowdCurio/audio-annotator/blob/master/static/video/Demo_app_annotation.mp4)
+[Watch the demo video](https://github.com/CrowdCurio/audio-annotator/blob/master/static/video/Demo_app_annotation.mp4)
 </kbd>
 
 ### Feedback mechanisms
