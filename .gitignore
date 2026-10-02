@@ -1,0 +1,7 @@
+results.jsonl
+static/json/sample_data.json
+.Rhistory
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

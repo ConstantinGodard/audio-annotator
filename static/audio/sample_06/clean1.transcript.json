@@ -1,0 +1,307 @@
+[
+  {
+    "word": "Ah,",
+    "start": 0.0,
+    "end": 0.06
+  },
+  {
+    "word": "j",
+    "start": 0.24,
+    "end": 0.28
+  },
+  {
+    "word": "'ai",
+    "start": 0.28,
+    "end": 0.34
+  },
+  {
+    "word": "du",
+    "start": 0.34,
+    "end": 0.5
+  },
+  {
+    "word": "diabète,",
+    "start": 0.5,
+    "end": 0.94
+  },
+  {
+    "word": "mais",
+    "start": 1.08,
+    "end": 1.12
+  },
+  {
+    "word": "il",
+    "start": 1.12,
+    "end": 1.22
+  },
+  {
+    "word": "est",
+    "start": 1.22,
+    "end": 1.32
+  },
+  {
+    "word": "suivi.",
+    "start": 1.32,
+    "end": 1.84
+  },
+  {
+    "word": "Vous",
+    "start": 2.74,
+    "end": 3.06
+  },
+  {
+    "word": "savez,",
+    "start": 3.06,
+    "end": 3.28
+  },
+  {
+    "word": "si",
+    "start": 3.46,
+    "end": 3.56
+  },
+  {
+    "word": "c",
+    "start": 3.56,
+    "end": 3.72
+  },
+  {
+    "word": "'est",
+    "start": 3.72,
+    "end": 3.72
+  },
+  {
+    "word": "un",
+    "start": 3.72,
+    "end": 3.8
+  },
+  {
+    "word": "diabète",
+    "start": 3.8,
+    "end": 4.2
+  },
+  {
+    "word": "du",
+    "start": 4.2,
+    "end": 4.38
+  },
+  {
+    "word": "type",
+    "start": 4.38,
+    "end": 4.66
+  },
+  {
+    "word": "1,",
+    "start": 4.66,
+    "end": 4.96
+  },
+  {
+    "word": "je",
+    "start": 5.16,
+    "end": 5.54
+  },
+  {
+    "word": "prends",
+    "start": 5.54,
+    "end": 5.74
+  },
+  {
+    "word": "mon",
+    "start": 5.74,
+    "end": 5.9
+  },
+  {
+    "word": "insuline.",
+    "start": 5.9,
+    "end": 6.46
+  },
+  {
+    "word": "D",
+    "start": 10.65,
+    "end": 10.85
+  },
+  {
+    "word": "'accord,",
+    "start": 10.85,
+    "end": 10.97
+  },
+  {
+    "word": "ça",
+    "start": 11.13,
+    "end": 11.23
+  },
+  {
+    "word": "fait",
+    "start": 11.23,
+    "end": 11.35
+  },
+  {
+    "word": "combien",
+    "start": 11.35,
+    "end": 11.53
+  },
+  {
+    "word": "de",
+    "start": 11.53,
+    "end": 11.81
+  },
+  {
+    "word": "temps",
+    "start": 11.81,
+    "end": 11.91
+  },
+  {
+    "word": "?",
+    "start": 11.91,
+    "end": 12.15
+  },
+  {
+    "word": "On",
+    "start": 12.83,
+    "end": 13.19
+  },
+  {
+    "word": "sait",
+    "start": 13.19,
+    "end": 13.37
+  },
+  {
+    "word": "ça",
+    "start": 13.37,
+    "end": 13.57
+  },
+  {
+    "word": "avec",
+    "start": 13.57,
+    "end": 13.69
+  },
+  {
+    "word": "plusieurs",
+    "start": 13.69,
+    "end": 14.05
+  },
+  {
+    "word": "dédiés.",
+    "start": 14.05,
+    "end": 14.47
+  },
+  {
+    "word": "Ouais,",
+    "start": 16.11,
+    "end": 16.47
+  },
+  {
+    "word": "je",
+    "start": 16.47,
+    "end": 16.83
+  },
+  {
+    "word": "me",
+    "start": 16.83,
+    "end": 16.97
+  },
+  {
+    "word": "l",
+    "start": 16.97,
+    "end": 17.13
+  },
+  {
+    "word": "'envoie.",
+    "start": 17.13,
+    "end": 17.29
+  },
+  {
+    "word": "Et",
+    "start": 19.44,
+    "end": 19.8
+  },
+  {
+    "word": "vous",
+    "start": 19.8,
+    "end": 19.9
+  },
+  {
+    "word": "inquiétez,",
+    "start": 19.9,
+    "end": 20.14
+  },
+  {
+    "word": "je",
+    "start": 20.24,
+    "end": 20.34
+  },
+  {
+    "word": "vous",
+    "start": 20.34,
+    "end": 20.44
+  },
+  {
+    "word": "rends.",
+    "start": 20.44,
+    "end": 20.66
+  },
+  {
+    "word": "Là,",
+    "start": 21.22,
+    "end": 21.44
+  },
+  {
+    "word": "j",
+    "start": 21.52,
+    "end": 21.58
+  },
+  {
+    "word": "'ai",
+    "start": 21.58,
+    "end": 21.62
+  },
+  {
+    "word": "50",
+    "start": 21.62,
+    "end": 21.88
+  },
+  {
+    "word": "qu",
+    "start": 21.88,
+    "end": 22.14
+  },
+  {
+    "word": "'un,",
+    "start": 22.14,
+    "end": 22.18
+  },
+  {
+    "word": "de",
+    "start": 22.5,
+    "end": 22.68
+  },
+  {
+    "word": "60",
+    "start": 22.68,
+    "end": 22.94
+  },
+  {
+    "word": "qu",
+    "start": 22.94,
+    "end": 23.28
+  },
+  {
+    "word": "'un",
+    "start": 23.28,
+    "end": 23.28
+  },
+  {
+    "word": "qui",
+    "start": 23.28,
+    "end": 23.4
+  },
+  {
+    "word": "est",
+    "start": 23.4,
+    "end": 23.44
+  },
+  {
+    "word": "suivi.",
+    "start": 23.44,
+    "end": 23.6
+  }
+]

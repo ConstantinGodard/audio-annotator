@@ -1,0 +1,97 @@
+[
+  {
+    "word": "il",
+    "start": 0.0,
+    "end": 0.12
+  },
+  {
+    "word": "n",
+    "start": 0.12,
+    "end": 0.12
+  },
+  {
+    "word": "'y",
+    "start": 0.12,
+    "end": 0.12
+  },
+  {
+    "word": "a",
+    "start": 0.12,
+    "end": 0.2
+  },
+  {
+    "word": "pas",
+    "start": 0.2,
+    "end": 0.52
+  },
+  {
+    "word": "une",
+    "start": 0.52,
+    "end": 0.64
+  },
+  {
+    "word": "enlèvement",
+    "start": 0.64,
+    "end": 1.14
+  },
+  {
+    "word": "particulier,",
+    "start": 1.14,
+    "end": 1.9
+  },
+  {
+    "word": "vous",
+    "start": 2.3,
+    "end": 2.48
+  },
+  {
+    "word": "êtes",
+    "start": 2.48,
+    "end": 2.6
+  },
+  {
+    "word": "pas",
+    "start": 2.6,
+    "end": 2.74
+  },
+  {
+    "word": "proupés",
+    "start": 2.74,
+    "end": 3.0
+  },
+  {
+    "word": "malade,",
+    "start": 3.0,
+    "end": 3.7
+  },
+  {
+    "word": "vous",
+    "start": 5.49,
+    "end": 5.89
+  },
+  {
+    "word": "avez",
+    "start": 5.89,
+    "end": 6.09
+  },
+  {
+    "word": "des",
+    "start": 6.09,
+    "end": 6.23
+  },
+  {
+    "word": "soucis",
+    "start": 6.23,
+    "end": 6.53
+  },
+  {
+    "word": "de",
+    "start": 6.53,
+    "end": 6.65
+  },
+  {
+    "word": "santé.",
+    "start": 6.65,
+    "end": 6.93
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "word": "On",
+    "start": 0.0,
+    "end": 0.1
+  },
+  {
+    "word": "ne",
+    "start": 0.1,
+    "end": 0.1
+  },
+  {
+    "word": "peut",
+    "start": 0.1,
+    "end": 0.2
+  },
+  {
+    "word": "pas",
+    "start": 0.2,
+    "end": 0.36
+  },
+  {
+    "word": "vous",
+    "start": 0.36,
+    "end": 0.52
+  },
+  {
+    "word": "laisser",
+    "start": 0.52,
+    "end": 0.66
+  },
+  {
+    "word": "comme",
+    "start": 0.66,
+    "end": 1.04
+  },
+  {
+    "word": "ça",
+    "start": 1.04,
+    "end": 1.26
+  },
+  {
+    "word": "très",
+    "start": 1.26,
+    "end": 2.14
+  },
+  {
+    "word": "longtemps.",
+    "start": 2.14,
+    "end": 2.44
+  },
+  {
+    "word": "Donc",
+    "start": 2.66,
+    "end": 2.66
+  },
+  {
+    "word": "on",
+    "start": 2.66,
+    "end": 2.78
+  },
+  {
+    "word": "se",
+    "start": 2.78,
+    "end": 2.98
+  },
+  {
+    "word": "revera",
+    "start": 2.98,
+    "end": 3.6
+  },
+  {
+    "word": "une",
+    "start": 3.6,
+    "end": 4.76
+  },
+  {
+    "word": "fois",
+    "start": 4.76,
+    "end": 4.98
+  },
+  {
+    "word": "que",
+    "start": 4.98,
+    "end": 5.1
+  },
+  {
+    "word": "vous",
+    "start": 5.1,
+    "end": 5.22
+  },
+  {
+    "word": "aurez",
+    "start": 5.22,
+    "end": 5.5
+  },
+  {
+    "word": "fait",
+    "start": 5.5,
+    "end": 5.74
+  },
+  {
+    "word": "ces",
+    "start": 5.74,
+    "end": 6.26
+  },
+  {
+    "word": "examens.",
+    "start": 6.26,
+    "end": 6.84
+  },
+  {
+    "word": "Ce",
+    "start": 7.64,
+    "end": 8.06
+  },
+  {
+    "word": "que",
+    "start": 8.06,
+    "end": 8.18
+  },
+  {
+    "word": "je",
+    "start": 8.18,
+    "end": 8.28
+  },
+  {
+    "word": "vous",
+    "start": 8.28,
+    "end": 8.38
+  },
+  {
+    "word": "ai",
+    "start": 8.38,
+    "end": 8.5
+  },
+  {
+    "word": "pas",
+    "start": 8.5,
+    "end": 8.64
+  },
+  {
+    "word": "dit",
+    "start": 8.64,
+    "end": 8.82
+  },
+  {
+    "word": "aussi,",
+    "start": 8.82,
+    "end": 9.3
+  },
+  {
+    "word": "c",
+    "start": 9.62,
+    "end": 9.62
+  },
+  {
+    "word": "'est",
+    "start": 9.62,
+    "end": 9.84
+  },
+  {
+    "word": "au",
+    "start": 9.84,
+    "end": 10.28
+  },
+  {
+    "word": "niveau",
+    "start": 10.28,
+    "end": 10.44
+  },
+  {
+    "word": "de",
+    "start": 10.44,
+    "end": 10.54
+  },
+  {
+    "word": "la",
+    "start": 10.54,
+    "end": 10.64
+  },
+  {
+    "word": "prise",
+    "start": 10.64,
+    "end": 10.82
+  },
+  {
+    "word": "de",
+    "start": 10.82,
+    "end": 11.04
+  },
+  {
+    "word": "sang,",
+    "start": 11.04,
+    "end": 11.3
+  },
+  {
+    "word": "il",
+    "start": 11.38,
+    "end": 11.44
+  },
+  {
+    "word": "faudra",
+    "start": 11.44,
+    "end": 11.68
+  },
+  {
+    "word": "compléter",
+    "start": 11.68,
+    "end": 12.36
+  },
+  {
+    "word": "pour",
+    "start": 12.36,
+    "end": 13.14
+  },
+  {
+    "word": "savoir,",
+    "start": 13.14,
+    "end": 13.54
+  },
+  {
+    "word": "parce",
+    "start": 13.68,
+    "end": 13.78
+  },
+  {
+    "word": "qu",
+    "start": 13.78,
+    "end": 13.94
+  },
+  {
+    "word": "'à",
+    "start": 13.94,
+    "end": 13.94
+  },
+  {
+    "word": "l",
+    "start": 13.94,
+    "end": 14.08
+  },
+  {
+    "word": "'heure",
+    "start": 14.08,
+    "end": 14.08
+  },
+  {
+    "word": "-là,",
+    "start": 14.08,
+    "end": 14.26
+  },
+  {
+    "word": "cette",
+    "start": 14.8,
+    "end": 15.04
+  },
+  {
+    "word": "hormone",
+    "start": 15.04,
+    "end": 15.6
+  },
+  {
+    "word": "qui",
+    "start": 15.6,
+    "end": 16.02
+  },
+  {
+    "word": "est",
+    "start": 16.02,
+    "end": 16.12
+  },
+  {
+    "word": "faite",
+    "start": 16.12,
+    "end": 16.44
+  },
+  {
+    "word": "permet",
+    "start": 16.44,
+    "end": 17.08
+  },
+  {
+    "word": "juste",
+    "start": 17.08,
+    "end": 17.34
+  },
+  {
+    "word": "de",
+    "start": 17.34,
+    "end": 17.52
+  },
+  {
+    "word": "nous",
+    "start": 17.52,
+    "end": 17.66
+  },
+  {
+    "word": "dire",
+    "start": 17.66,
+    "end": 17.94
+  },
+  {
+    "word": "qu",
+    "start": 17.94,
+    "end": 18.14
+  },
+  {
+    "word": "'il",
+    "start": 18.14,
+    "end": 18.16
+  },
+  {
+    "word": "y",
+    "start": 18.16,
+    "end": 18.24
+  },
+  {
+    "word": "a",
+    "start": 18.24,
+    "end": 18.24
+  },
+  {
+    "word": "trop",
+    "start": 18.24,
+    "end": 18.52
+  },
+  {
+    "word": "d",
+    "start": 18.52,
+    "end": 19.04
+  },
+  {
+    "word": "'organes",
+    "start": 19.04,
+    "end": 19.82
+  },
+  {
+    "word": "qui",
+    "start": 19.82,
+    "end": 20.56
+  },
+  {
+    "word": "circulent,",
+    "start": 20.56,
+    "end": 21.34
+  },
+  {
+    "word": "donc",
+    "start": 21.4,
+    "end": 21.48
+  },
+  {
+    "word": "tout",
+    "start": 21.48,
+    "end": 21.66
+  },
+  {
+    "word": "ce",
+    "start": 21.66,
+    "end": 22.18
+  },
+  {
+    "word": "que",
+    "start": 22.18,
+    "end": 22.26
+  },
+  {
+    "word": "je",
+    "start": 22.26,
+    "end": 22.36
+  },
+  {
+    "word": "vous",
+    "start": 22.36,
+    "end": 22.46
+  },
+  {
+    "word": "ai",
+    "start": 22.46,
+    "end": 22.54
+  },
+  {
+    "word": "expliqué.",
+    "start": 22.54,
+    "end": 23.0
+  },
+  {
+    "word": "Mais",
+    "start": 23.54,
+    "end": 23.72
+  },
+  {
+    "word": "ces",
+    "start": 23.72,
+    "end": 24.32
+  },
+  {
+    "word": "deux",
+    "start": 24.32,
+    "end": 24.54
+  },
+  {
+    "word": "paramètres",
+    "start": 24.54,
+    "end": 25.08
+  },
+  {
+    "word": "qu",
+    "start": 25.08,
+    "end": 25.28
+  },
+  {
+    "word": "'on",
+    "start": 25.28,
+    "end": 25.4
+  },
+  {
+    "word": "fera",
+    "start": 25.4,
+    "end": 25.92
+  },
+  {
+    "word": "dans",
+    "start": 25.92,
+    "end": 26.26
+  },
+  {
+    "word": "la",
+    "start": 26.26,
+    "end": 27.48
+  },
+  {
+    "word": "prise",
+    "start": 27.48,
+    "end": 27.66
+  },
+  {
+    "word": "de",
+    "start": 27.66,
+    "end": 27.88
+  },
+  {
+    "word": "sang,",
+    "start": 27.88,
+    "end": 28.08
+  },
+  {
+    "word": "c",
+    "start": 28.2,
+    "end": 28.26
+  },
+  {
+    "word": "'est",
+    "start": 28.26,
+    "end": 28.3
+  },
+  {
+    "word": "pour",
+    "start": 28.3,
+    "end": 28.48
+  },
+  {
+    "word": "essayer",
+    "start": 28.48,
+    "end": 28.76
+  },
+  {
+    "word": "de",
+    "start": 28.76,
+    "end": 28.92
+  },
+  {
+    "word": "voir",
+    "start": 28.92,
+    "end": 29.04
+  },
+  {
+    "word": "l",
+    "start": 29.04,
+    "end": 29.26
+  },
+  {
+    "word": "'intensité",
+    "start": 29.26,
+    "end": 29.8
+  },
+  {
+    "word": "en",
+    "start": 29.8,
+    "end": 29.92
+  },
+  {
+    "word": "fait",
+    "start": 29.92,
+    "end": 30.06
+  },
+  {
+    "word": "de",
+    "start": 30.06,
+    "end": 30.22
+  },
+  {
+    "word": "sa",
+    "start": 30.22,
+    "end": 30.36
+  },
+  {
+    "word": "production",
+    "start": 30.36,
+    "end": 30.76
+  },
+  {
+    "word": "d",
+    "start": 30.76,
+    "end": 30.98
+  },
+  {
+    "word": "'organes.",
+    "start": 30.98,
+    "end": 31.06
+  },
+  {
+    "word": "Est",
+    "start": 31.28,
+    "end": 31.28
+  },
+  {
+    "word": "-ce",
+    "start": 31.28,
+    "end": 31.38
+  },
+  {
+    "word": "que",
+    "start": 31.38,
+    "end": 31.4
+  },
+  {
+    "word": "c",
+    "start": 31.4,
+    "end": 31.54
+  },
+  {
+    "word": "'est",
+    "start": 31.54,
+    "end": 31.62
+  },
+  {
+    "word": "juste",
+    "start": 31.62,
+    "end": 31.84
+  },
+  {
+    "word": "un",
+    "start": 31.84,
+    "end": 32.22
+  },
+  {
+    "word": "petit",
+    "start": 32.22,
+    "end": 32.5
+  },
+  {
+    "word": "peu",
+    "start": 32.5,
+    "end": 32.72
+  },
+  {
+    "word": "ou",
+    "start": 32.72,
+    "end": 33.28
+  },
+  {
+    "word": "vraiment,",
+    "start": 33.28,
+    "end": 33.64
+  },
+  {
+    "word": "c",
+    "start": 33.84,
+    "end": 34.18
+  },
+  {
+    "word": "'est",
+    "start": 34.18,
+    "end": 34.26
+  },
+  {
+    "word": "beaucoup",
+    "start": 34.26,
+    "end": 34.38
+  },
+  {
+    "word": "trop",
+    "start": 34.38,
+    "end": 34.72
+  },
+  {
+    "word": "important.",
+    "start": 34.72,
+    "end": 35.02
+  }
+]

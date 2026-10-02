@@ -1,0 +1,67 @@
+[
+  {
+    "word": "Non",
+    "start": 0.24,
+    "end": 0.86
+  },
+  {
+    "word": "?",
+    "start": 0.86,
+    "end": 1.82
+  },
+  {
+    "word": "Non,",
+    "start": 1.82,
+    "end": 2.34
+  },
+  {
+    "word": "rien",
+    "start": 2.5,
+    "end": 2.62
+  },
+  {
+    "word": "!",
+    "start": 2.62,
+    "end": 3.6
+  },
+  {
+    "word": "Je",
+    "start": 3.6,
+    "end": 3.86
+  },
+  {
+    "word": "suis",
+    "start": 3.86,
+    "end": 4.84
+  },
+  {
+    "word": "le",
+    "start": 4.84,
+    "end": 4.94
+  },
+  {
+    "word": "papa,",
+    "start": 4.94,
+    "end": 5.18
+  },
+  {
+    "word": "je",
+    "start": 5.48,
+    "end": 5.54
+  },
+  {
+    "word": "coupe",
+    "start": 5.54,
+    "end": 5.66
+  },
+  {
+    "word": "les",
+    "start": 5.66,
+    "end": 5.86
+  },
+  {
+    "word": "barres.",
+    "start": 5.86,
+    "end": 6.12
+  }
+]

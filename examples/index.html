@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Audio Annotator</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/audio-annotator.css?v=2">
+
+    <script type="text/javascript" src="../static/js/lib/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../static/js/lib/materialize.min.js"></script>
+    <script type="text/javascript" src="../static/js/lib/wavesurfer.min.js"></script>
+    <script type="text/javascript" src="../static/js/lib/wavesurfer.spectrogram.min.js"></script>
+    <script type="text/javascript" src="../static/js/colormap/colormap.min.js"></script>
+
+    <script type="text/javascript" src="../static/js/src/message.js"></script>
+    <script type="text/javascript" src="../static/js/src/wavesurfer.regions.js"></script>
+    <script type="text/javascript" src="../static/js/src/wavesurfer.drawer.extended.js"></script>
+    <script type="text/javascript" src="../static/js/src/wavesurfer.labels.js"></script>
+    <script type="text/javascript" src="../static/js/src/hidden_image.js"></script>
+    <script type="text/javascript" src="../static/js/src/components.js"></script>
+    <script type="text/javascript" src="../static/js/src/annotation_stages.js?v=2"></script>
+    <script type="text/javascript" src="../static/js/src/main.js?v=2" defer></script>
+</head>
+<body>
+    <div id="progress_counter" style="position: fixed; top: 6px; left: 10px; font-size: 13px; color: #555; z-index: 999;"></div>
+    <div class="sample_name_display"></div>
+    <div class="desc_toggle_wrap">
+        <span id="desc_toggle" title="Afficher/masquer la description">ⓘ</span>
+        <div id="video_description" class="video_description" style="display:none;"></div>
+    </div>
+    <div class="row header">
+        <div class="col s12">
+            <div class="divider"></div>
+        </div>
+        <div class="col s6">
+        </div>
+        <div class="col s6 ">
+            <div class="right" style="padding-top: 0px;">
+            </div>
+        </div>
+    </div>
+    <div class="annotation">
+        <div class="labels"></div>
+        <div class="audio_visual"></div>
+        <div class="transcript_box"></div>
+        <div class="transcript_note">Les sous-titres sont fournis à titre indicatif ; ne pas signaler les erreurs de transcription.</div>
+        <div class="play_bar"></div>
+        <div class="hidden_img"></div>
+        <div class="creation_stage_container"></div>
+        <div class="submit_container"></div>
+    </div>
+    <script>
+        var videoDescriptions = {};
+        fetch('/static/json/descriptions_test.json')
+            .then(r => r.json())
+            .then(data => {
+                videoDescriptions = data;
+                var description = videoDescriptions['default'] || '';
+                $('#video_description').text(description).hide();
+                $('#desc_toggle').toggle(!!description);
+            })
+            .catch(() => { videoDescriptions = {}; });
+    </script>
+    <script>
+        var dataUrl = '/task';
+        var postUrl = '/submit';
+    </script>
+</body>
+</html>

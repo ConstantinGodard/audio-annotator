@@ -1,0 +1,267 @@
+[
+  {
+    "word": "J",
+    "start": 0.05,
+    "end": 0.27
+  },
+  {
+    "word": "'ai",
+    "start": 0.27,
+    "end": 0.33
+  },
+  {
+    "word": "du",
+    "start": 0.33,
+    "end": 0.49
+  },
+  {
+    "word": "diabète,",
+    "start": 0.49,
+    "end": 0.97
+  },
+  {
+    "word": "mais",
+    "start": 1.09,
+    "end": 1.11
+  },
+  {
+    "word": "il",
+    "start": 1.11,
+    "end": 1.23
+  },
+  {
+    "word": "est",
+    "start": 1.23,
+    "end": 1.33
+  },
+  {
+    "word": "suivi.",
+    "start": 1.33,
+    "end": 1.95
+  },
+  {
+    "word": "Vous",
+    "start": 2.81,
+    "end": 3.09
+  },
+  {
+    "word": "savez",
+    "start": 3.09,
+    "end": 3.35
+  },
+  {
+    "word": "si",
+    "start": 3.35,
+    "end": 3.55
+  },
+  {
+    "word": "c",
+    "start": 3.55,
+    "end": 3.71
+  },
+  {
+    "word": "'est",
+    "start": 3.71,
+    "end": 3.73
+  },
+  {
+    "word": "un",
+    "start": 3.73,
+    "end": 3.81
+  },
+  {
+    "word": "diabète",
+    "start": 3.81,
+    "end": 4.23
+  },
+  {
+    "word": "du",
+    "start": 4.23,
+    "end": 4.39
+  },
+  {
+    "word": "type",
+    "start": 4.39,
+    "end": 4.67
+  },
+  {
+    "word": "1.",
+    "start": 4.67,
+    "end": 5.03
+  },
+  {
+    "word": "Ah,",
+    "start": 5.27,
+    "end": 5.37
+  },
+  {
+    "word": "je",
+    "start": 5.51,
+    "end": 5.57
+  },
+  {
+    "word": "trouve",
+    "start": 5.57,
+    "end": 5.73
+  },
+  {
+    "word": "que",
+    "start": 5.73,
+    "end": 5.89
+  },
+  {
+    "word": "c",
+    "start": 5.89,
+    "end": 5.99
+  },
+  {
+    "word": "'est",
+    "start": 5.99,
+    "end": 5.99
+  },
+  {
+    "word": "un",
+    "start": 5.99,
+    "end": 5.99
+  },
+  {
+    "word": "suivi.",
+    "start": 5.99,
+    "end": 6.35
+  },
+  {
+    "word": "Ça",
+    "start": 10.86,
+    "end": 11.22
+  },
+  {
+    "word": "fait",
+    "start": 11.22,
+    "end": 11.36
+  },
+  {
+    "word": "combien",
+    "start": 11.36,
+    "end": 11.54
+  },
+  {
+    "word": "de",
+    "start": 11.54,
+    "end": 11.82
+  },
+  {
+    "word": "temps",
+    "start": 11.82,
+    "end": 11.92
+  },
+  {
+    "word": "plus",
+    "start": 11.92,
+    "end": 12.16
+  },
+  {
+    "word": "?",
+    "start": 12.16,
+    "end": 12.98
+  },
+  {
+    "word": "Oh,",
+    "start": 12.98,
+    "end": 13.2
+  },
+  {
+    "word": "ça",
+    "start": 13.3,
+    "end": 13.4
+  },
+  {
+    "word": "fait",
+    "start": 13.4,
+    "end": 13.66
+  },
+  {
+    "word": "plus.",
+    "start": 13.66,
+    "end": 13.88
+  },
+  {
+    "word": "Vous",
+    "start": 19.63,
+    "end": 19.87
+  },
+  {
+    "word": "avez",
+    "start": 19.87,
+    "end": 19.97
+  },
+  {
+    "word": "quel",
+    "start": 19.97,
+    "end": 20.13
+  },
+  {
+    "word": "âge",
+    "start": 20.13,
+    "end": 20.27
+  },
+  {
+    "word": "aujourd",
+    "start": 20.27,
+    "end": 20.53
+  },
+  {
+    "word": "'hui",
+    "start": 20.53,
+    "end": 20.67
+  },
+  {
+    "word": "?",
+    "start": 20.67,
+    "end": 21.23
+  },
+  {
+    "word": "Là,",
+    "start": 21.23,
+    "end": 21.43
+  },
+  {
+    "word": "j",
+    "start": 21.49,
+    "end": 21.59
+  },
+  {
+    "word": "'ai",
+    "start": 21.59,
+    "end": 21.61
+  },
+  {
+    "word": "55.",
+    "start": 21.61,
+    "end": 21.87
+  },
+  {
+    "word": "De",
+    "start": 22.45,
+    "end": 22.67
+  },
+  {
+    "word": "65,",
+    "start": 22.67,
+    "end": 22.97
+  },
+  {
+    "word": "c",
+    "start": 23.33,
+    "end": 23.49
+  },
+  {
+    "word": "'est",
+    "start": 23.49,
+    "end": 23.49
+  },
+  {
+    "word": "suivi.",
+    "start": 23.49,
+    "end": 23.67
+  }
+]
