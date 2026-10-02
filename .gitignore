@@ -5,4 +5,4 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
-
+static/video/Demo_app_annotation.mp4
