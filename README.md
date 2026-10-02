@@ -1,107 +1,112 @@
 # audio-annotator
 
-[![MIT licensed](https://img.shields.io/badge/license-BSD2-blue.svg)](https://github.com/CrowdCurio/audio-annotator/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/badge/license-see%20LICENSE.txt-blue.svg)](LICENSE.txt)
 
-Javascript web interface for annotating audio data, adapted for emotion detection in order to create a dataset for Speech Emotion Recognition.
+A JavaScript web interface for annotating audio data, adapted for emotion annotation in order to build a dataset for Speech Emotion Recognition (SER).
 
-Developed by [StefanieMikloska](github.com/StefanieMikloska), [CrowdLab @ Univertsity of Waterloo](http://edithlaw.ca/people.html) and [MARL @ New York University](http://steinhardt.nyu.edu/marl/).
+This project is a fork of [CrowdCurio/audio-annotator](https://github.com/CrowdCurio/audio-annotator), adapted for annotating emotions in a medical context (ECOS simulations). The whole UI is in French to support French-speaking annotators.
 
-When used in academic work please cite:
+Developed by [Stefanie Mikloska](https://github.com/StefanieMikloska), the [CrowdLab @ University of Waterloo](http://edithlaw.ca/people.html) and [MARL @ New York University](http://steinhardt.nyu.edu/marl/).
 
-> M. Cartwright, A. Seals, J. Salamon, A. Williams, S. Mikloska, D. MacConnell, E. Law, J. Bello, and O. Nov. "Seeing sound: Investigating the effects of visualizations and complexity on crowdsourced audio annotations." In *Proceedings of the ACM on Human-Computer Interaction*, 1(1), 2017.
+## Table of contents
 
-### Description
-audio-annotator is a web interface that allows users to annotate audio recordings, which was then adapted for emotion detection in order to create a dataset for Speech Emotion Recognition. Every feature useless for emotion annotation was therfore removed from the initial repository. The usecase of this repository is for french emotion annotation, therefore, every single sentences in the UI web app is in french, hence helping french speaking annotators. 
+- [Features](#features)
+- [Demo](#demo)
+- [Getting started](#getting-started)
+- [Audio credits](#audio-credits)
+- [Visualizations](#visualizations)
+- [Project structure](#project-structure)
+- [Citation and license](#citation-and-license)
 
-It has 3 types of audio visualizations (wavesurfer.params.visualization)
-   1. invisible (appears as a blank rectangle)
-   2. spectrogram (audio file is represented by a spectrogram)
-   3. waveform (audio file is represented by a waveform)
-The feature enabling the possibility to select a region in the rectangle was removed (useless for our case).
+## Features
 
-Example of usage:
+Compared to the original repository, the following features were added:
+
+- **Audio transcription**: each clip can be accompanied by a transcript generated with [WhisperX](https://github.com/m-bain/whisperX) and shown as subtitles. Even when imperfect, it gives the annotator useful context and clues, especially for difficult medical vocabulary.
+- **Audio description**: a short description of the source video can be displayed alongside the transcript to give general context. The name of the playing file is also shown, which in our case carries contextual information.
+- **Likert scale and definitions**: each clip is rated from 1 to 7 on four emotions (in our use case: *Calme / assurance*, *Empathie / chaleur*, *Impatience / irritation*, *Froideur / détachement*), with each emotion's definition displayed on screen.
+- **Comment box**: an optional free-text field, placed just above the submit button, lets annotators report anything odd about the audio or hesitations about the labelling.
+- **Mandatory listening**: the annotator must listen to the clip once before being able to grade it, to prevent careless or spam labelling.
+
+The following features from the original repository were removed as irrelevant to this use case:
+
+- Selecting a region in the visualization (each clip is annotated as a whole).
+- Real-time feedback mechanisms based on user annotations.
+
+## Demo
 
 https://github.com/user-attachments/assets/9b9ad4a2-ab24-477b-befc-a0f4ab968272
 
-### Audio Credential
-For the demo in this repository, we used audio files extracted from the first 3 videos from the youtube channel @GestesTechniquesECOS : 
-   * 0 - Vidéo introductive
-   * 1 - Massage cardiaque externe (adulte)
-   * 2 - Ponction lombaire
+## Getting started
 
-One can find the timestamp of each audio sample directly in their name, eg: 0 - Vidéo introductive_sample_1_56.5426s-80.5853s.wav => from second 56.5426 to second 80.5853.
+**Requirements:** Python 3.
 
-### Feedback mechanisms
-audio-annotator also provides mechanisms for providing real-time feedback to the user based on their annotations, but this feature was also removed for our usage.
-   
-### To Demo
-1. In the audio-annotator/ directory run `python server.py`
-2. Visit <http://localhost:8000/examples> in your browser to see the version with annotation. This demo also uses the spectrogram visualization.
-3. As one can see on the demo video provided above, the annotator must listen the audio file one time before giving grade on Lickert's scale to each specific emotion. This feature was made in order to avoide annotator spamming wrong labels.
+1. Clone the repository and move into the `audio-annotator/` directory.
+2. Start the local server:
+   ```bash
+   python server.py
+   ```
+3. Open <http://localhost:8000/examples> in your browser. The demo uses the spectrogram visualization.
 
-Note: In the examples, the submit annotations btn will output data to the followinf .json file: audio-annotator\results.jsonl (which is in the .gitignore).
+Submitted annotations are written to `results.jsonl` (listed in `.gitignore`).
 
-### Feature added compared to initial repository
-* **Audio transcription**
-   * The transcription of the audio was made using whisperx. While the transcription is never 100% accurate, it still provides an okay subtitles and gives a good contexte and clues for the annotator, especially for medical purposes where the vocabulary can be difficult.
-* **Audio file description**
-   * The transcription might not be enough context in order to help the annotator. Therefore we added a description that can be adapted in order to give a general context. We also decided to show the name of the file that was playing, which in our case gives in, contexte information.
-* **Lickert's scale and definition**
-   * In order to better help the annotator, we provided a Lickert's scale as a label from grade 1 to 7 for each specific emotion (which were in our use case: Calme / assurance, Empathie / chaleur, Impatience / irritation and Froideur / détachement).
-* **Comment box**
-   * We also added a comment box right on top of the submit button, just in case if the annotators would like to report something odd with the audio file, or labelling the emotion.
+The examples do not depend on any specific backend: they load a JSON file containing fake data to render the interface.
 
-### Interfacing with backends
-The examples in the **examples/** do not depend on any specific backend. They make a call to json containing fake data in order to render the interface. Extra information for specific backends:
+## Audio credits
 
-### Files
-* [**examples/**](examples/)
-   * [index.html](examples/index.html)  
-      HTML file for the normal version of the interface, with 4 predefined emotions 
+The demo audio files were extracted from the first three videos of the YouTube channel [@GestesTechniquesECOS](https://www.youtube.com/@GestesTechniquesECOS):
 
-* [**static/css/**](static/css/)
-   * [urban-ears.css](static/css/urban-ears.css)  
-      Custom css for urbanears interface
-   * [materialize.min.css](static/css/materialize.min.css)  
-      Minified version of materlize css
+0. Vidéo introductive
+1. Massage cardiaque externe (adulte)
+2. Ponction lombaire
 
-* [**static/js/**](static/js/)
-   * [colormap/](static/js/colormap/)
-      * [gen_colormap.sh](static/js/colormap/gen_colormap.sh)  
-         Shell script used to generate colormap.min.js. If gen_colormap.js is modified  
-         run `source gen_colormap.sh` in the colormap directory to generate the new colormap.min.js
-      * [gen_colormap.js](static/js/colormap/gen_colormap.js)  
-         This file is used by gen_colormap.sh to generate colormap.min.js  
-         It that requires colormap node module and adds it as a global variable  
-         This file also defines the magma colour scheme
-      * [colormap.min.js](static/js/colormap/colormap.min.js)  
-         Generated JS file
-   * [lib/](static/js/lib/)
-      * Non modified minified external JS libraries used by the  urbanears interface
-   * [src/](static/js/src/)
-      * [annotation_stages.js](static/js/src/annotation_stages.js)  
-         Defines: StageOneView (view when no region is selected), StageTwoView (online mode creation view), StageThreeView (view when region is selected, 
-         it displays the tags to annotate the region), AnnotationStages (controller of the annotation work flow)
-      * [components.js](static/js/src/components.js)  
-         Defines: Util (helper functions for creating timestamp elements), PlayBar (play events, play button and progress time stamp), 
-         WorkflowBtns (submit button and exit button)
-      * [hidden_image.js](static/js/src/hidden_image.js)  
-         Defines: HiddenImg (Creates elements to hide an image behind a canvas, and reveal random parts of the image)
-      * [main.js](static/js/src/main.js)  
-         Defines: UrbanEars (Creates and and updates all parts of the interface when a new task is loaded. Also submits task data) 
-      * [message.js](static/js/src/message.js)  
-         Defines: Message (helper functions that alert the user of different messages using Materlize toast)
-      * [wavesurfer.drawer.extended.js](static/js/src/wavesurfer.drawer.extended.js)  
-         Using the logic from the wavesurfer spectrogram plugin to override the wavesurfer drawer logic in order to have waveform visiualizations as well as spectrogram and inivisble visiualizations
-      * [wavesurfer.labels.js](static/js/src/wavesurfer.labels.js)  
-         Defines: WaveSurfer.Labels (creates container element for lables and controls the positioning of the labels), WaveSurfer.Label (individual label elements)
-      * [wavesurfer.regions.js](static/js/src/wavesurfer.regions.js)  
-         Modified version of wavesurfer regions plugin           
- (https://github.com/katspaugh/wavesurfer.js/blob/master/plugin/wavesurfer.regions.js)
+The timestamps of each sample are encoded in its filename. For example, `0 - Vidéo introductive_sample_1_56.5426s-80.5853s.wav` covers the segment from 56.5426 s to 80.5853 s of the source video.
 
-* [**static/json/**](static/json/)
-   * [Description_test.json](static/json/Description_test.json)  
-      A description for the video from which the audio file was extracted from, to give context to the annotator.
-   * [sample_data.json](static/json/sample_data.json)  
-      Sample data for normal urban ears example      
+## Visualizations
 
+The `wavesurfer.params.visualization` parameter accepts three values:
+
+1. `invisible`: no visualization (blank rectangle)
+2. `spectrogram`: the audio is displayed as a spectrogram
+3. `waveform`: the audio is displayed as a waveform
+
+## Project structure
+
+```
+audio-annotator/
+├── server.py                 Local server: serves tasks and stores annotations
+├── examples/
+│   └── index.html            Main annotation interface (4 predefined emotions)
+└── static/
+    ├── css/
+    │   ├── urban-ears.css        Custom styles for the interface
+    │   └── materialize.min.css   Materialize CSS framework
+    ├── json/
+    │   ├── Description_test.json Description of the source video (context for the annotator)
+    │   └── sample_data.json      Sample task data
+    └── js/
+        ├── colormap/
+        │   ├── gen_colormap.sh   Generates colormap.min.js
+        │   ├── gen_colormap.js   Input for gen_colormap.sh (defines the magma colour scheme)
+        │   └── colormap.min.js   Generated colormap used by the spectrogram
+        ├── lib/                  Unmodified external libraries
+        └── src/
+            ├── main.js                       UrbanEars: builds/updates the interface when a task loads, submits task data
+            ├── annotation_stages.js          Annotation workflow: Likert scales, definitions, validation
+            ├── components.js                 UI components: play bar, timestamps, workflow buttons
+            ├── message.js                    User notifications (Materialize toasts)
+            ├── hidden_image.js               Visual feedback mechanism (inherited, unused here)
+            ├── wavesurfer.drawer.extended.js Spectrogram, waveform and invisible visualizations
+            ├── wavesurfer.labels.js          Labels displayed above the visualization
+            └── wavesurfer.regions.js         Modified wavesurfer.js regions plugin
+```
+
+To regenerate the colormap after editing `gen_colormap.js`, run `source gen_colormap.sh` from the `colormap/` directory.
+
+## Citation and license
+
+When used in academic work, please cite the original paper:
+
+> M. Cartwright, A. Seals, J. Salamon, A. Williams, S. Mikloska, D. MacConnell, E. Law, J. Bello, and O. Nov. "Seeing sound: Investigating the effects of visualizations and complexity on crowdsourced audio annotations." *Proceedings of the ACM on Human-Computer Interaction*, 1(1), 2017.
+
+License: see [LICENSE.txt](LICENSE.txt).
